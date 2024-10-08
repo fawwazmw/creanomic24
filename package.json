@@ -10,9 +10,14 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "flowbite": "^2.5.2",
+    "gsap": "^3.12.5",
     "nuxt": "^3.13.0",
     "nuxt-app": "file:",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1"
   }
 }
