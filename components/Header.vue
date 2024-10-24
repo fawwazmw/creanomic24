@@ -1,8 +1,11 @@
 <template>
   <header>
-    <nav class="bg-transparent border-gray-200 dark:bg-transparent">
+    <nav
+      id="navbar"
+      class="bg-transparent border-gray-200 dark:bg-transparent fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out"
+    >
       <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+        class="container mx-auto max-w-screen-xl flex flex-wrap items-center justify-between p-4"
       >
         <a
           href="https://flowbite.com/"
@@ -17,7 +20,7 @@
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-xl text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-xl text-gray-900 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded="false"
         >
@@ -38,14 +41,14 @@
             />
           </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
           <ul
-            class="font-medium text-xl flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-transparent dark:border-gray-700 font-poppins"
+            class="font-medium text-xl flex flex-col lg:flex-row p-4 lg:p-0 mt-4 lg:space-x-8 lg:mt-0 lg:border-0 font-poppins"
           >
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500 link-underline active"
+                class="block py-2 px-3 text-gray-900 transition-colors duration-500 rounded lg:p-0 dark:text-white link-underline active navbar-link"
                 aria-current="page"
               >
                 Home
@@ -55,7 +58,7 @@
               <button
                 id="dropdownNavbarLink"
                 data-dropdown-toggle="dropdownNavbar"
-                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent font-poppins link-underline"
+                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 transition-colors duration-500 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-white link-underline navbar-link"
               >
                 Event<svg
                   class="w-2.5 h-2.5 ms-2.5"
@@ -123,7 +126,7 @@
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent link-underline"
+                class="block py-2 px-3 text-gray-900 transition-colors duration-500 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-white link-underline navbar-link"
               >
                 Merchandise
               </a>
@@ -131,7 +134,7 @@
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent link-underline"
+                class="block py-2 px-3 text-gray-900 transition-colors duration-500 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white link-underline navbar-link"
               >
                 Competition
               </a>
@@ -139,7 +142,7 @@
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent link-underline"
+                class="block py-2 px-3 text-gray-900 transition-colors duration-500 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white link-underline navbar-link"
               >
                 Talkshow
               </a>
@@ -154,6 +157,38 @@
 <script>
 export default {
   name: "Header",
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const navbar = document.getElementById("navbar");
+      const navbarLinks = document.querySelectorAll(".navbar-link");
+
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-[#201169]/80", "shadow-lg");
+        navbar.classList.remove("bg-transparent");
+
+        // Change text color to white after scrolling, except on hover
+        navbarLinks.forEach((link) => {
+          link.classList.add("text-white");
+          link.classList.remove("text-gray-900");
+        });
+      } else {
+        navbar.classList.add("bg-transparent");
+        navbar.classList.remove("bg-[#201169]/80", "shadow-lg");
+
+        // Reset text color to default before scrolling
+        navbarLinks.forEach((link) => {
+          link.classList.add("text-gray-900");
+          link.classList.remove("text-white");
+        });
+      }
+    },
+  },
 };
 </script>
 
@@ -179,6 +214,11 @@ export default {
 
 .link-underline:hover::after {
   width: 100%;
+}
+
+/* Override hover effect when scrolled */
+.navbar-link:hover {
+  color: inherit !important; /* Prevent color change on hover after scroll */
 }
 
 .link-underline.active::after {
