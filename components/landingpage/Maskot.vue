@@ -85,127 +85,135 @@ export default {
     };
   },
   mounted() {
-    // Animate maskottext from top to original position
-    gsap.from(".maskottext", {
-      y: -100,
-      opacity: 0,
-      duration: 3,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".maskottext",
-        start: "top 90%",
-        end: "bottom 50%",
-        scrub: true,
-      },
-    });
+    if (typeof window !== "undefined") {
+      // Ensure the window object is available before accessing it
+      this.initAnimations();
+    }
+  },
+  methods: {
+    initAnimations() {
+      // Animate maskottext from top to original position
+      gsap.from(".maskottext", {
+        y: -100,
+        opacity: 0,
+        duration: 3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".maskottext",
+          start: "top 90%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+      });
 
-    // Animate maskotlogo from bottom to top
-    gsap.from(".maskotlogo", {
-      y: 100,
-      opacity: 0,
-      duration: 3,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".maskotlogo",
-        start: "top 90%",
-        end: "bottom 50%",
-        scrub: true,
-      },
-    });
+      // Animate maskotlogo from bottom to top
+      gsap.from(".maskotlogo", {
+        y: 100,
+        opacity: 0,
+        duration: 3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".maskotlogo",
+          start: "top 90%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+      });
 
-    // Animate text-kanan from right to left without going outside viewport
-    gsap.from(".text-kanan", {
-      x: "100vw",
-      opacity: 0,
-      duration: 3,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".text-kanan",
-        start: "top 90%",
-        end: "bottom 50%",
-        scrub: true,
-      },
-    });
-
-    // Animate text-kiri from left to right without going outside viewport
-    gsap.from(".text-kiri", {
-      x: "-100vw",
-      opacity: 0,
-      duration: 3,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".text-kiri",
-        start: "top 90%",
-        end: "bottom 50%",
-        scrub: true,
-      },
-    });
-
-    // Animate tentacle-kanan from right to original position
-    gsap.from(".tentacle-kanan", {
-      x: "100vw",
-      opacity: 0,
-      duration: 3,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".tentacle-kanan",
-        start: "top 90%",
-        end: "bottom 50%",
-        scrub: true,
-      },
-    });
-
-    // Animate tentacle-kiri from left to original position
-    gsap.from(".tentacle-kiri", {
-      x: "-100vw",
-      opacity: 0,
-      duration: 3,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".tentacle-kiri",
-        start: "top 90%",
-        end: "bottom 50%",
-        scrub: true,
-      },
-    });
-
-    // Change color of kanan text from grey to dark after position
-    gsap.fromTo(
-      ".kanan-word",
-      { color: "#A0A0A0" },
-      {
-        color: "#121212",
-        ease: "none",
+      // Animate text-kanan from right to left without going outside viewport
+      gsap.from(".text-kanan", {
+        x: "100vw",
+        opacity: 0,
+        duration: 3,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: ".text-kanan",
           start: "top 90%",
-          end: "center center",
+          end: "bottom 50%",
           scrub: true,
         },
-        stagger: {
-          each: 0.1,
-        },
-      }
-    );
+      });
 
-    // Change color of kiri text from grey to dark after position
-    gsap.fromTo(
-      ".kiri-word",
-      { color: "#A0A0A0" },
-      {
-        color: "#121212",
-        ease: "none",
+      // Animate text-kiri from left to right without going outside viewport
+      gsap.from(".text-kiri", {
+        x: "-100vw",
+        opacity: 0,
+        duration: 3,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: ".text-kiri",
           start: "top 90%",
-          end: "center center",
+          end: "bottom 50%",
           scrub: true,
         },
-        stagger: {
-          each: 0.1,
+      });
+
+      // Animate tentacle-kanan from right to original position
+      gsap.from(".tentacle-kanan", {
+        x: "100vw",
+        opacity: 0,
+        duration: 3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".tentacle-kanan",
+          start: "top 90%",
+          end: "bottom 50%",
+          scrub: true,
         },
-      }
-    );
+      });
+
+      // Animate tentacle-kiri from left to original position
+      gsap.from(".tentacle-kiri", {
+        x: "-100vw",
+        opacity: 0,
+        duration: 3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".tentacle-kiri",
+          start: "top 90%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+      });
+
+      // Change color of kanan text from grey to dark after position
+      gsap.fromTo(
+        ".kanan-word",
+        { color: "#A0A0A0" },
+        {
+          color: "#121212",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".text-kanan",
+            start: "top 90%",
+            end: "center center",
+            scrub: true,
+          },
+          stagger: {
+            each: 0.1,
+          },
+        }
+      );
+
+      // Change color of kiri text from grey to dark after position
+      gsap.fromTo(
+        ".kiri-word",
+        { color: "#A0A0A0" },
+        {
+          color: "#121212",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".text-kiri",
+            start: "top 90%",
+            end: "center center",
+            scrub: true,
+          },
+          stagger: {
+            each: 0.1,
+          },
+        }
+      );
+    },
   },
 };
 </script>
