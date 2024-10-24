@@ -113,9 +113,9 @@ export default {
       },
     });
 
-    // Animate text-kanan from right to left
+    // Animate text-kanan from right to left without going outside viewport
     gsap.from(".text-kanan", {
-      x: 100,
+      x: "100vw",
       opacity: 0,
       duration: 3,
       ease: "power3.out",
@@ -127,9 +127,9 @@ export default {
       },
     });
 
-    // Animate text-kiri from left to right
+    // Animate text-kiri from left to right without going outside viewport
     gsap.from(".text-kiri", {
-      x: -100,
+      x: "-100vw",
       opacity: 0,
       duration: 3,
       ease: "power3.out",
@@ -141,9 +141,9 @@ export default {
       },
     });
 
-    // Animate tentacle-kanan from bottom to top
+    // Animate tentacle-kanan from right to original position
     gsap.from(".tentacle-kanan", {
-      y: 100,
+      x: "100vw",
       opacity: 0,
       duration: 3,
       ease: "power3.out",
@@ -155,9 +155,9 @@ export default {
       },
     });
 
-    // Animate tentacle-kiri from bottom to top
+    // Animate tentacle-kiri from left to original position
     gsap.from(".tentacle-kiri", {
-      y: 100,
+      x: "-100vw",
       opacity: 0,
       duration: 3,
       ease: "power3.out",
@@ -221,6 +221,10 @@ export default {
   margin-right: 0.3em;
 }
 
+.maskot-section {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 @media (max-width: 1024px) {
   .maskot-section {
     height: 800px;
@@ -268,12 +272,6 @@ export default {
     left: 4vw;
     width: 35vw;
   }
-  .text-kanan-font {
-    font-size: small;
-  }
-  .text-kiri-font {
-    font-size: small;
-  }
   .tentacle-kanan {
     top: 44vh;
     right: 0vw;
@@ -308,12 +306,6 @@ export default {
     left: 15vw;
     width: 70vw;
   }
-  .text-kanan-font {
-    font-size: smaller;
-  }
-  .text-kiri-font {
-    font-size: smaller;
-  }
   .tentacle-kanan {
     top: 44vh;
     right: 25vw;
@@ -347,12 +339,6 @@ export default {
     top: 54vh;
     left: 15vw;
     width: 70vw;
-  }
-  .text-kanan-font {
-    font-size: smaller;
-  }
-  .text-kiri-font {
-    font-size: smaller;
   }
   .tentacle-kanan {
     top: 44vh;
