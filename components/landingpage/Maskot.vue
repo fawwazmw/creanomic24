@@ -85,8 +85,8 @@ export default {
     };
   },
   mounted() {
+    // Run animations only if the window object is defined
     if (typeof window !== "undefined") {
-      // Ensure the window object is available before accessing it
       this.initAnimations();
     }
   },
