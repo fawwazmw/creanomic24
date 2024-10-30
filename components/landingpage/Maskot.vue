@@ -6,14 +6,14 @@
     <img
       src="assets/maskottext.svg"
       alt="Text Maskot"
-      class="absolute top-[124px] md:top-[124px] object-contain left-1/2 -translate-x-1/2 max-w-[80%] md:max-w-none maskottext"
+      class="absolute top-[124px] md:top-[124px] object-contain left-1/2 transform -translate-x-1/2 max-w-[80%] md:max-w-none maskottext"
     />
 
     <!-- New Maskot Image -->
     <img
       src="assets/maskot.svg"
       alt="Gambar Maskot"
-      class="absolute top-[277px] md:top-[277px] left-1/2 -translate-x-1/2 object-contain max-w-[80%] md:max-w-none maskotlogo"
+      class="absolute top-[277px] md:top-[277px] left-1/2 transform -translate-x-1/2 object-contain max-w-[80%] md:max-w-none maskotlogo"
     />
 
     <!-- New Text Section (Right) -->
@@ -85,135 +85,119 @@ export default {
     };
   },
   mounted() {
-    // Run animations only if the window object is defined
-    if (typeof window !== "undefined") {
-      this.initAnimations();
-    }
-  },
-  methods: {
-    initAnimations() {
-      // Animate maskottext from top to original position
-      gsap.from(".maskottext", {
-        y: -100,
-        opacity: 0,
-        duration: 3,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".maskottext",
-          start: "top 90%",
-          end: "bottom 50%",
-          scrub: true,
-        },
-      });
+    gsap.from(".maskottext", {
+      y: -50, // Slightly above the starting position
+      opacity: 0,
+      duration: 3,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".maskottext",
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
 
-      // Animate maskotlogo from bottom to top
-      gsap.from(".maskotlogo", {
-        y: 100,
-        opacity: 0,
-        duration: 3,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".maskotlogo",
-          start: "top 90%",
-          end: "bottom 50%",
-          scrub: true,
-        },
-      });
+    gsap.from(".maskotlogo", {
+      y: 50, // Slightly below the starting position
+      opacity: 0,
+      duration: 3,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".maskotlogo",
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
 
-      // Animate text-kanan from right to left without going outside viewport
-      gsap.from(".text-kanan", {
-        x: "100vw",
-        opacity: 0,
-        duration: 3,
-        ease: "power3.out",
+    gsap.from(".text-kanan", {
+      x: 50, // Start closer to the right
+      opacity: 0,
+      duration: 3,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".text-kanan",
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+
+    gsap.from(".text-kiri", {
+      x: -50, // Start closer to the left
+      opacity: 0,
+      duration: 3,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".text-kiri",
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+
+    gsap.from(".tentacle-kanan", {
+      y: 50, // Slightly below the starting position
+      opacity: 0,
+      duration: 3,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".tentacle-kanan",
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+
+    gsap.from(".tentacle-kiri", {
+      y: 50, // Slightly below the starting position
+      opacity: 0,
+      duration: 3,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".tentacle-kiri",
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+
+    gsap.fromTo(
+      ".kanan-word",
+      { color: "#A0A0A0" },
+      {
+        color: "#121212",
+        ease: "none",
         scrollTrigger: {
           trigger: ".text-kanan",
           start: "top 90%",
-          end: "bottom 50%",
+          end: "center center",
           scrub: true,
         },
-      });
+        stagger: {
+          each: 0.1,
+        },
+      }
+    );
 
-      // Animate text-kiri from left to right without going outside viewport
-      gsap.from(".text-kiri", {
-        x: "-100vw",
-        opacity: 0,
-        duration: 3,
-        ease: "power3.out",
+    gsap.fromTo(
+      ".kiri-word",
+      { color: "#A0A0A0" },
+      {
+        color: "#121212",
+        ease: "none",
         scrollTrigger: {
           trigger: ".text-kiri",
           start: "top 90%",
-          end: "bottom 50%",
+          end: "center center",
           scrub: true,
         },
-      });
-
-      // Animate tentacle-kanan from right to original position
-      gsap.from(".tentacle-kanan", {
-        x: "100vw",
-        opacity: 0,
-        duration: 3,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".tentacle-kanan",
-          start: "top 90%",
-          end: "bottom 50%",
-          scrub: true,
+        stagger: {
+          each: 0.1,
         },
-      });
-
-      // Animate tentacle-kiri from left to original position
-      gsap.from(".tentacle-kiri", {
-        x: "-100vw",
-        opacity: 0,
-        duration: 3,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".tentacle-kiri",
-          start: "top 90%",
-          end: "bottom 50%",
-          scrub: true,
-        },
-      });
-
-      // Change color of kanan text from grey to dark after position
-      gsap.fromTo(
-        ".kanan-word",
-        { color: "#A0A0A0" },
-        {
-          color: "#121212",
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".text-kanan",
-            start: "top 90%",
-            end: "center center",
-            scrub: true,
-          },
-          stagger: {
-            each: 0.1,
-          },
-        }
-      );
-
-      // Change color of kiri text from grey to dark after position
-      gsap.fromTo(
-        ".kiri-word",
-        { color: "#A0A0A0" },
-        {
-          color: "#121212",
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".text-kiri",
-            start: "top 90%",
-            end: "center center",
-            scrub: true,
-          },
-          stagger: {
-            each: 0.1,
-          },
-        }
-      );
-    },
+      }
+    );
   },
 };
 </script>
@@ -227,10 +211,6 @@ export default {
 .kiri-word {
   display: inline-block;
   margin-right: 0.3em;
-}
-
-.maskot-section {
-  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 @media (max-width: 1024px) {
@@ -249,11 +229,11 @@ export default {
     left: 4vw;
   }
   .tentacle-kanan {
-    top: 54vh;
+    top: 58vh;
     right: 0vw;
   }
   .tentacle-kiri {
-    top: 54vh;
+    top: 58vh;
     left: 0vw;
   }
 }
@@ -280,13 +260,19 @@ export default {
     left: 4vw;
     width: 35vw;
   }
+  .text-kanan-font {
+    font-size: small;
+  }
+  .text-kiri-font {
+    font-size: small;
+  }
   .tentacle-kanan {
-    top: 44vh;
+    top: 46vh;
     right: 0vw;
     width: 42vw;
   }
   .tentacle-kiri {
-    top: 44vh;
+    top: 46vh;
     left: 0vw;
     width: 42vw;
   }
@@ -310,17 +296,23 @@ export default {
     width: 70vw;
   }
   .text-kiri {
-    top: 58vh;
+    top: 64vh;
     left: 15vw;
     width: 70vw;
   }
+  .text-kanan-font {
+    font-size: smaller;
+  }
+  .text-kiri-font {
+    font-size: smaller;
+  }
   .tentacle-kanan {
-    top: 44vh;
+    top: 48vh;
     right: 25vw;
     width: 120vw;
   }
   .tentacle-kiri {
-    top: 70vh;
+    top: 80vh;
     left: 25vw;
     width: 120vw;
   }
@@ -339,22 +331,28 @@ export default {
     top: 12vh;
   }
   .text-kanan {
-    top: 28vh;
+    top: 32vh;
     right: 15vw;
     width: 70vw;
   }
   .text-kiri {
-    top: 54vh;
+    top: 64vh;
     left: 15vw;
     width: 70vw;
   }
+  .text-kanan-font {
+    font-size: smaller;
+  }
+  .text-kiri-font {
+    font-size: smaller;
+  }
   .tentacle-kanan {
-    top: 44vh;
+    top: 48vh;
     right: 25vw;
     width: 120vw;
   }
   .tentacle-kiri {
-    top: 70vh;
+    top: 80vh;
     left: 25vw;
     width: 120vw;
   }

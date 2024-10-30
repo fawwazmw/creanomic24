@@ -59,7 +59,6 @@ export default {
   name: "AboutUs",
   data() {
     return {
-      // Split the text into words for word-by-word animation
       textWords:
         `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur temporibus numquam quas reiciendis maxime aspernatur consectetur sit harum iste, tempora error minus corporis at? Quod autem, cum aut, aspernatur cumque officia sint, nisi quasi saepe placeat ratione neque odio delectus nihil ut magnam! Blanditiis illo cupiditate deserunt accusamus facere iste, iure voluptate dolorum dolore enim aut nesciunt, nam quaerat necessitatibus laudantium nisi consequuntur fuga laboriosam dignissimos, nobis sapiente expedita?`.split(
           " "
@@ -69,41 +68,41 @@ export default {
   mounted() {
     // Animate aboutus.svg with scale and from bottom for smooth entrance
     gsap.from(".aboutus", {
-      y: 100, // Move slightly up from below
-      scale: 1.2, // Start scaled up
+      y: 50, // Move slightly up from below
+      scale: 1.1, // Start slightly scaled up
       opacity: 0,
       duration: 3,
-      ease: "power3.out", // Smooth easing
+      ease: "power3.out",
       scrollTrigger: {
         trigger: ".aboutus",
-        start: "top 90%", // Start after image enters viewport
-        end: "bottom 50%", // Extended scroll duration
-        scrub: true, // Responsive to scroll speed
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
       },
     });
 
-    // Animasi perubahan warna per kata pada text, lebih lama
+    // Animasi perubahan warna per kata pada text
     gsap.fromTo(
       ".word",
-      { color: "#A0A0A0" }, // initial color is grey
+      { color: "#8AB6D6" }, // Warna awal: biru muda
       {
-        color: "#121212", // transition to darker color
-        ease: "none", // Linear transition for smoothness
+        color: "#1D3557", // Warna akhir: biru tua yang lebih gelap
+        ease: "none",
         scrollTrigger: {
           trigger: ".paragraph",
-          start: "top 90%", // Start later for longer scroll duration
-          end: "center center", // Complete when viewport reaches the center
-          scrub: true, // Make responsive to scroll speed
+          start: "top 90%",
+          end: "center center",
+          scrub: true,
         },
         stagger: {
-          each: 0.1, // Faster stagger for word-by-word animation
+          each: 0.1,
         },
       }
     );
 
     // Animasi ombak kanan dari kanan
     gsap.from(".ombakbelakangkanan, .ombakdepankanan", {
-      x: 150, // Start further out for smoother scrolling effect
+      x: 50, // Start from a slight offset instead of fully outside the viewport
       opacity: 0,
       duration: 3,
       ease: "power3.out",
@@ -111,13 +110,13 @@ export default {
         trigger: ".ombakbelakangkanan",
         start: "top 90%",
         end: "bottom 10%",
-        scrub: true, // Smoothly adjust to scroll speed
+        scrub: true,
       },
     });
 
     // Animasi ombak kiri dari kiri
     gsap.from(".ombakbelakangkiri, .ombakdepankiri", {
-      x: -150, // Start further out for smoother scrolling effect
+      x: -50, // Start from a slight offset instead of fully outside the viewport
       opacity: 0,
       duration: 3,
       ease: "power3.out",
@@ -125,7 +124,7 @@ export default {
         trigger: ".ombakbelakangkiri",
         start: "top 90%",
         end: "bottom 10%",
-        scrub: true, // Smoothly adjust to scroll speed
+        scrub: true,
       },
     });
   },

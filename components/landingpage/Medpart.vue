@@ -25,10 +25,7 @@
         :key="n"
         src="assets/medpart.svg"
         :alt="`Media Partner ${n}`"
-        :class="[
-          'medpart-image w-[100px] sm:w-[130px] md:w-[150px] h-[100px] sm:h-[130px] md:h-[150px] object-cover',
-          n <= 7 ? 'row1' : 'row2',
-        ]"
+        :class="['medpart-image', n <= 7 ? 'row1' : 'row2']"
       />
     </div>
 
@@ -51,14 +48,15 @@ export default {
   name: "Medpart",
   data() {
     return {
-      isMobile: window.innerWidth <= 425,
+      isMobile: false, // Default to false; will be set correctly on mount.
     };
   },
   mounted() {
+    this.isMobile = window.innerWidth <= 425;
     window.addEventListener("resize", this.handleResize);
     this.initAnimations();
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener("resize", this.handleResize);
   },
   methods: {
@@ -66,9 +64,8 @@ export default {
       this.isMobile = window.innerWidth <= 425;
     },
     initAnimations() {
-      // Animate mainmedia text from top to bottom
       gsap.from(".mainmedia", {
-        y: -100,
+        y: -50, // Slightly above to avoid starting outside the viewport
         opacity: 0,
         duration: 2,
         ease: "power3.out",
@@ -80,9 +77,8 @@ export default {
         },
       });
 
-      // Animate row1 images from right to left
       gsap.from(".row1", {
-        x: 100,
+        x: 50, // Slightly to the right instead of outside the viewport
         opacity: 0,
         duration: 2,
         ease: "power3.out",
@@ -96,9 +92,8 @@ export default {
         },
       });
 
-      // Animate row2 images from left to right
       gsap.from(".row2", {
-        x: -100,
+        x: -50, // Slightly to the left instead of outside the viewport
         opacity: 0,
         duration: 2,
         ease: "power3.out",
@@ -112,9 +107,8 @@ export default {
         },
       });
 
-      // Animate callingout.svg from bottom to top
       gsap.from(".callingout", {
-        y: 100,
+        y: 50, // Slightly below for a smooth entrance
         opacity: 0,
         duration: 2,
         ease: "power3.out",
@@ -142,7 +136,6 @@ export default {
 </script>
 
 <style scoped>
-/* Importing Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
 .font-poppins {
@@ -150,12 +143,12 @@ export default {
 }
 
 .mediapartner-section {
-  padding-bottom: 50px; /* Ensure there's space for callingout.svg */
+  padding-bottom: 50px;
 }
 
 .mediagrid {
-  margin-top: 120px; /* Add spacing between title and grid */
-  margin-bottom: 20px; /* Ensure some space before callingout.svg */
+  margin-top: 120px;
+  margin-bottom: 20px;
 }
 
 .callingout {
@@ -165,7 +158,9 @@ export default {
 }
 
 .medpart-image {
-  transition: width 0.3s ease, height 0.3s ease; /* Smooth transition for resizing */
+  transition: width 0.3s ease, height 0.3s ease;
+  width: 100px;
+  height: 100px;
 }
 
 @media (max-width: 1920px) {
@@ -176,16 +171,14 @@ export default {
 
 @media (max-width: 425px) {
   .mediapartner-section {
-    padding-bottom: 150px; /* Adjust space for callingout.svg */
+    padding-bottom: 150px;
   }
-
   .medpart-image {
     width: 70px;
     height: 70px;
   }
-
   .mediagrid {
-    gap-x: 5px; /* Reduce gap for better spacing */
+    gap-x: 5px;
     gap-y: 10px;
   }
 }
@@ -194,14 +187,12 @@ export default {
   .mediapartner-section {
     padding-bottom: 150px;
   }
-
   .medpart-image {
     width: 60px;
     height: 60px;
   }
-
   .mediagrid {
-    gap-x: 5px; /* Reduce gap for better spacing */
+    gap-x: 5px;
     gap-y: 10px;
   }
 }
@@ -210,14 +201,12 @@ export default {
   .mediapartner-section {
     padding-bottom: 150px;
   }
-
   .medpart-image {
     width: 50px;
     height: 50px;
   }
-
   .mediagrid {
-    gap-x: 5px; /* Reduce gap for better spacing */
+    gap-x: 5px;
     gap-y: 10px;
   }
 }

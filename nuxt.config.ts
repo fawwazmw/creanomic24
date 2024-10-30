@@ -9,7 +9,31 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      title: "Creanomic UB | Landing Page",
+      htmlAttrs: {
+        lang: "en",
+      },
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          hid: "description",
+          name: "description",
+          content: "This is Official Of Creanomic Brawijaya University Website",
+        },
+        { name: "author", content: "FWZ.dev" },
+        { name: "theme-color", content: "#5a47cc" }, // Optional for mobile browsers
+      ],
       link: [
+        {
+          rel: "icon",
+          type: "image/svg+xml",
+          href: "/crea-icon.svg",
+        },
+        {
+          rel: "apple-touch-icon",
+          href: "/crea-icon.svg",
+        },
         {
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap",

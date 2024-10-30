@@ -129,61 +129,61 @@ export default {
         ease: "power3.out",
         scrollTrigger: {
           trigger: trigger,
-          start: "top 85%", // Start the animation when the element is near the center
-          end: "top 20%", // End when the element reaches its final place
+          start: "top 85%",
+          end: "top 20%",
           scrub: true,
         },
       });
     };
 
-    // Create animations
+    // Adjusted animations to keep elements within the viewport
     createAnimation(
       ".guritakananbelakang",
-      { x: "100%", opacity: 0 },
+      { x: "30%", opacity: 0 },
       { x: "0%", opacity: 1 }
     );
     createAnimation(
       ".guritakiribelakang",
-      { x: "-100%", opacity: 0 },
+      { x: "-30%", opacity: 0 },
       { x: "0%", opacity: 1 }
     );
     createAnimation(
       ".guritakanandepan",
-      { x: "100%", opacity: 0 },
+      { x: "30%", opacity: 0 },
       { x: "0%", opacity: 1 }
     );
 
-    // Adjusted animation for logogurita to start earlier and sync better
+    // Animation for logogurita
     createAnimation(
       ".logogurita",
-      { y: "100%", opacity: 0 },
+      { y: "30%", opacity: 0 },
       { y: "0%", opacity: 1 },
       ".guritakanandepan"
     );
 
     createAnimation(
       ".guritakiridepan",
-      { x: "-100%", opacity: 0 },
+      { x: "-30%", opacity: 0 },
       { x: "0%", opacity: 1 }
     );
     createAnimation(
       [".logokanan", ".maintextkanan"],
-      { x: "100%", opacity: 0 },
+      { x: "30%", opacity: 0 },
       { x: "0%", opacity: 1 }
     );
     createAnimation(
       [".logokiri", ".maintextkiri"],
-      { x: "-100%", opacity: 0 },
+      { x: "-30%", opacity: 0 },
       { x: "0%", opacity: 1 }
     );
     createAnimation(
       [".logokanantengah", ".maintextkanantengah"],
-      { x: "100%", opacity: 0 },
+      { x: "30%", opacity: 0 },
       { x: "0%", opacity: 1 }
     );
     createAnimation(
       [".logokiritengah", ".maintextkiritengah"],
-      { x: "-100%", opacity: 0 },
+      { x: "-30%", opacity: 0 },
       { x: "0%", opacity: 1 }
     );
   },
@@ -517,7 +517,7 @@ export default {
 @media (max-width: 425px) {
   .logo-section {
     background-size: 100% 600px;
-    height: 1300px;
+    height: 1400px;
   }
 
   .guritakananbelakang {
@@ -547,12 +547,12 @@ export default {
   .logokanan {
     right: 35vw;
     width: 30vw;
-    top: 25vh;
+    top: 28vh;
   }
   .maintextkanan {
     right: 25vw;
     width: 52vw;
-    top: -56vh;
+    top: -66vh;
   }
   .textkanan {
     font-size: small;
@@ -560,7 +560,7 @@ export default {
   .logokanantengah {
     right: 35vw;
     width: 30vw;
-    top: 52vh;
+    top: 60vh;
   }
   .maintextkanantengah {
     right: 35vw;
@@ -573,12 +573,12 @@ export default {
   .logokiritengah {
     left: 35vw;
     width: 30vw;
-    top: 80vh;
+    top: 94vh;
   }
   .maintextkiritengah {
     left: 33vw;
     width: 34vw;
-    top: 60vh;
+    top: 74vh;
   }
   .textkiritengah {
     font-size: small;
@@ -586,12 +586,12 @@ export default {
   .logokiri {
     left: 35vw;
     width: 30vw;
-    top: 109vh;
+    top: 130vh;
   }
   .maintextkiri {
     left: 33vw;
     width: 34vw;
-    top: 120vh;
+    top: 148vh;
   }
   .textkiri {
     font-size: small;

@@ -62,49 +62,49 @@ export default {
 
     // Animasi Creatext (zoom out)
     tl.from(".creatext", {
-      duration: 1.5,
+      duration: 0.8, // Faster animation
       scale: 0,
       ease: "power2.out",
     })
       // Wave belakang 1 dari bawah ke atas
       .from(".wavebelakang1", {
-        duration: 1,
+        duration: 0.5, // Faster animation
         y: "100vh",
         ease: "power2.out",
       })
       // Karang kanan dari bawah ke atas
       .from(".karangkanan", {
-        duration: 1,
+        duration: 0.5, // Faster animation
         y: "100vh",
         ease: "power2.out",
       })
       // Karang kiri dari bawah ke atas
       .from(".karangkiri", {
-        duration: 1,
+        duration: 0.5, // Faster animation
         y: "100vh",
         ease: "power2.out",
       })
       // Wave belakang 2 dari bawah ke atas
       .from(".wavebelakang2", {
-        duration: 1,
+        duration: 0.5, // Faster animation
         y: "100vh",
         ease: "power2.out",
       })
       // Karang kanan depan dari bawah ke atas
       .from(".karangkanandepan", {
-        duration: 1,
+        duration: 0.5, // Faster animation
         y: "100vh",
         ease: "power2.out",
       })
       // Karang kiri depan dari bawah ke atas
       .from(".karangkiridepan", {
-        duration: 1,
+        duration: 0.5, // Faster animation
         y: "100vh",
         ease: "power2.out",
       })
       // Wave belakang 3 dari bawah ke atas
       .from(".wavebelakang3", {
-        duration: 1,
+        duration: 0.5, // Faster animation
         y: "100vh",
         ease: "power2.out",
       })
@@ -129,10 +129,28 @@ export default {
     #ffffff 0%,
     #3572ef 28%,
     #2939a0 63%,
-    #201169 100%
+    #5a47cc 75%,
+    /* Lighter shade of the previous dark color */ rgba(90, 71, 204, 0.8) 85%,
+    /* Start fading out earlier */ rgba(90, 71, 204, 0.5) 90%,
+    /* More gradual transition */ rgba(90, 71, 204, 0.3) 95%,
+    /* Extend the fade */ rgba(90, 71, 204, 0.1) 98%,
+    /* Even lighter towards the end */ rgba(90, 71, 204, 0) 100%
+      /* Fully transparent at the very bottom */
   );
-  background-size: 100% 1439px; /* Gradient covers 1439px height */
+  background-size: 100% 1600px; /* Adjust height if needed */
   background-repeat: no-repeat; /* Ensure the gradient doesn't repeat */
+}
+
+.wavebelakang1,
+.wavebelakang2 {
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(0, 0, 0, 0.8) 70%,
+    rgba(0, 0, 0, 0.5) 85%,
+    rgba(0, 0, 0, 0.2) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .hoverable {
