@@ -1,65 +1,65 @@
 <template>
   <section
-    class="maskot-section relative bg-white h-auto md:h-[1009px] flex flex-col items-center justify-start px-4 md:px-0"
+      class="maskot-section relative bg-white h-auto md:h-[1009px] flex flex-col items-center justify-start px-4 md:px-0"
   >
     <!-- Existing Maskot Text Image -->
     <img
-      src="assets/maskottext.svg"
-      alt="Text Maskot"
-      class="absolute top-[124px] md:top-[124px] object-contain left-1/2 transform -translate-x-1/2 max-w-[80%] md:max-w-none maskottext"
+        src="assets/maskottext.svg"
+        alt="Text Maskot"
+        class="absolute top-[124px] md:top-[124px] object-contain left-1/2 transform -translate-x-1/2 max-w-[80%] md:max-w-none maskottext"
     />
 
     <!-- New Maskot Image -->
     <img
-      src="assets/maskot.svg"
-      alt="Gambar Maskot"
-      class="absolute top-[277px] md:top-[277px] left-1/2 transform -translate-x-1/2 object-contain max-w-[80%] md:max-w-none maskotlogo"
+        src="assets/maskot.svg"
+        alt="Gambar Maskot"
+        class="absolute top-[277px] md:top-[277px] left-1/2 transform -translate-x-1/2 object-contain max-w-[80%] md:max-w-none maskotlogo"
     />
 
     <!-- New Text Section (Right) -->
     <div
-      class="absolute top-[370px] md:top-[370px] right-[10px] md:right-[135px] w-[90%] md:w-[350px] h-auto md:h-[231px] p-4 flex items-center justify-center text-kanan"
+        class="absolute top-[370px] md:top-[370px] right-[10px] md:right-[135px] w-[90%] md:w-[350px] h-auto md:h-[231px] p-4 flex items-center justify-center text-kanan"
     >
       <p
-        class="text-center text-sm sm:text-lg font-poppins leading-relaxed md:leading-normal text-kanan-font"
+          class="text-center text-sm sm:text-lg font-poppins leading-relaxed md:leading-normal text-kanan-font"
       >
         <span
-          v-for="(word, index) in kananWords"
-          :key="index"
-          class="kanan-word"
-          >{{ word }}</span
+            v-for="(word, index) in kananWords"
+            :key="index"
+            class="kanan-word"
+        >{{ word }}</span
         >
       </p>
     </div>
 
     <!-- Additional New Image (Right Tentacle) -->
     <img
-      src="assets/tentaclekanan.svg"
-      alt="Tentacle Kanan"
-      class="absolute top-[492px] md:top-[492px] right-[10px] md:right-[94px] object-contain max-w-[50%] md:max-w-none tentacle-kanan"
+        src="assets/tentaclekanan.svg"
+        alt="Tentacle Kanan"
+        class="absolute top-[492px] md:top-[492px] right-[10px] md:right-[94px] object-contain max-w-[50%] md:max-w-none tentacle-kanan"
     />
 
     <!-- Left Text Section -->
     <div
-      class="absolute top-[370px] md:top-[370px] left-[10px] md:left-[135px] w-[90%] md:w-[350px] h-auto md:h-[231px] p-4 flex items-center justify-center text-kiri"
+        class="absolute top-[370px] md:top-[370px] left-[10px] md:left-[135px] w-[90%] md:w-[350px] h-auto md:h-[231px] p-4 flex items-center justify-center text-kiri"
     >
       <p
-        class="text-center text-sm sm:text-lg font-poppins leading-relaxed md:leading-normal text-kiri-font"
+          class="text-center text-sm sm:text-lg font-poppins leading-relaxed md:leading-normal text-kiri-font"
       >
         <span
-          v-for="(word, index) in kiriWords"
-          :key="index"
-          class="kiri-word"
-          >{{ word }}</span
+            v-for="(word, index) in kiriWords"
+            :key="index"
+            class="kiri-word"
+        >{{ word }}</span
         >
       </p>
     </div>
 
     <!-- Tentacle Left Image -->
     <img
-      src="assets/tentaclekiri.svg"
-      alt="Tentacle Kiri"
-      class="absolute top-[492px] md:top-[492px] left-[10px] md:left-[94px] object-contain max-w-[50%] md:max-w-none tentacle-kiri"
+        src="assets/tentaclekiri.svg"
+        alt="Tentacle Kiri"
+        class="absolute top-[492px] md:top-[492px] left-[10px] md:left-[94px] object-contain max-w-[50%] md:max-w-none tentacle-kiri"
     />
   </section>
 </template>
@@ -75,20 +75,20 @@ export default {
   data() {
     return {
       kananWords:
-        `Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates distinctio tempore quas beatae et, magni eius itaque commodi necessitatibus maxime qui. Iure, doloribus?`.split(
-          " "
-        ),
+          `Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates distinctio tempore quas beatae et, magni eius itaque commodi necessitatibus maxime qui. Iure, doloribus?`.split(
+              " "
+          ),
       kiriWords:
-        `Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates distinctio tempore quas beatae et, magni eius itaque commodi necessitatibus maxime qui. Iure, doloribus?`.split(
-          " "
-        ),
+          `Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates distinctio tempore quas beatae et, magni eius itaque commodi necessitatibus maxime qui. Iure, doloribus?`.split(
+              " "
+          ),
     };
   },
   mounted() {
     gsap.from(".maskottext", {
-      y: -50, // Slightly above the starting position
+      y: -30, // Slightly above the starting position
       opacity: 0,
-      duration: 3,
+      duration: 2.5,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".maskottext",
@@ -99,9 +99,9 @@ export default {
     });
 
     gsap.from(".maskotlogo", {
-      y: 50, // Slightly below the starting position
+      y: 30, // Slightly below the starting position
       opacity: 0,
-      duration: 3,
+      duration: 2.5,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".maskotlogo",
@@ -112,9 +112,9 @@ export default {
     });
 
     gsap.from(".text-kanan", {
-      x: 50, // Start closer to the right
+      x: 15, // Start from edge of viewport on the right side
       opacity: 0,
-      duration: 3,
+      duration: 2.5,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".text-kanan",
@@ -125,9 +125,9 @@ export default {
     });
 
     gsap.from(".text-kiri", {
-      x: -50, // Start closer to the left
+      x: -15, // Start from edge of viewport on the left side
       opacity: 0,
-      duration: 3,
+      duration: 2.5,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".text-kiri",
@@ -138,9 +138,9 @@ export default {
     });
 
     gsap.from(".tentacle-kanan", {
-      y: 50, // Slightly below the starting position
+      y: 30, // Slightly below the starting position
       opacity: 0,
-      duration: 3,
+      duration: 2.5,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".tentacle-kanan",
@@ -151,9 +151,9 @@ export default {
     });
 
     gsap.from(".tentacle-kiri", {
-      y: 50, // Slightly below the starting position
+      y: 30, // Slightly below the starting position
       opacity: 0,
-      duration: 3,
+      duration: 2.5,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".tentacle-kiri",
@@ -164,39 +164,39 @@ export default {
     });
 
     gsap.fromTo(
-      ".kanan-word",
-      { color: "#A0A0A0" },
-      {
-        color: "#121212",
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".text-kanan",
-          start: "top 90%",
-          end: "center center",
-          scrub: true,
-        },
-        stagger: {
-          each: 0.1,
-        },
-      }
+        ".kanan-word",
+        { color: "#A0A0A0" },
+        {
+          color: "#121212",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".text-kanan",
+            start: "top 90%",
+            end: "center center",
+            scrub: true,
+          },
+          stagger: {
+            each: 0.1,
+          },
+        }
     );
 
     gsap.fromTo(
-      ".kiri-word",
-      { color: "#A0A0A0" },
-      {
-        color: "#121212",
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".text-kiri",
-          start: "top 90%",
-          end: "center center",
-          scrub: true,
-        },
-        stagger: {
-          each: 0.1,
-        },
-      }
+        ".kiri-word",
+        { color: "#A0A0A0" },
+        {
+          color: "#121212",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".text-kiri",
+            start: "top 90%",
+            end: "center center",
+            scrub: true,
+          },
+          stagger: {
+            each: 0.1,
+          },
+        }
     );
   },
 };
@@ -347,12 +347,12 @@ export default {
     font-size: smaller;
   }
   .tentacle-kanan {
-    top: 48vh;
+    top: 52vh;
     right: 25vw;
     width: 120vw;
   }
   .tentacle-kiri {
-    top: 80vh;
+    top: 82vh;
     left: 25vw;
     width: 120vw;
   }

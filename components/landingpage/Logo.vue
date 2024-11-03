@@ -384,6 +384,7 @@ export default {
   .logokanan {
     right: 12vw;
     width: 14vw;
+    top: 78vh;
   }
   .maintextkanan {
     right: 9vw;
@@ -396,11 +397,12 @@ export default {
   .logokanantengah {
     right: 31vw;
     width: 14vw;
+    top: 78vh;
   }
   .maintextkanantengah {
     right: 32vw;
     width: 12vw;
-    top: 96vh;
+    top: 98vh;
   }
   .textkanantengah {
     font-size: small;
@@ -413,6 +415,7 @@ export default {
   .maintextkiritengah {
     left: 35vw;
     width: 14vw;
+    top: 97vh;
   }
   .textkiritengah {
     font-size: small;
@@ -425,7 +428,7 @@ export default {
   .maintextkiri {
     left: 15vw;
     width: 14vw;
-    top: 97vh;
+    top: 100vh;
   }
   .textkiri {
     font-size: small;
@@ -465,11 +468,12 @@ export default {
   .logokanan {
     right: 12vw;
     width: 14vw;
+    top: 60vh;
   }
   .maintextkanan {
     right: 8vw;
     width: 22vw;
-    top: 68vh;
+    top: 70vh;
   }
   .textkanan {
     font-size: x-small;
@@ -477,11 +481,12 @@ export default {
   .logokanantengah {
     right: 31vw;
     width: 14vw;
+    top: 60vh;
   }
   .maintextkanantengah {
     right: 32vw;
     width: 12vw;
-    top: 71vh;
+    top: 73vh;
   }
   .textkanantengah {
     font-size: x-small;
@@ -494,7 +499,7 @@ export default {
   .maintextkiritengah {
     left: 32vw;
     width: 14vw;
-    top: 70vh;
+    top: 72vh;
   }
   .textkiritengah {
     font-size: x-small;
@@ -507,7 +512,7 @@ export default {
   .maintextkiri {
     left: 12vw;
     width: 14vw;
-    top: 72vh;
+    top: 74vh;
   }
   .textkiri {
     font-size: x-small;

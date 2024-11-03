@@ -147,19 +147,24 @@ export default {
 
 @media (max-width: 1920px) {
   .aboutus {
+    margin-top: 3vh;
   }
   .ombakbelakangkanan {
+    top: 40vh;
   }
   .ombakbelakangkiri {
   }
   .ombakdepankanan {
+    top: 50vh;
   }
   .ombakdepankiri {
+    top: 50vh;
   }
 }
 
 @media (max-width: 1600px) {
   .aboutus {
+    margin-top: 3vh;
   }
   .textabout {
     top: 28vh;
@@ -171,14 +176,17 @@ export default {
     top: 50vh;
   }
   .ombakdepankanan {
-    top: 65vh;
+    top: 64vh;
   }
   .ombakdepankiri {
-    top: 65vh;
+    top: 64vh;
   }
 }
 
 @media (max-width: 1440px) {
+  .aboutus {
+    margin-top: 2vh;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -187,6 +195,7 @@ export default {
   }
   .aboutus {
     width: 45vw;
+    margin-top: 1vh;
   }
   .textabout {
     top: 16vh;
