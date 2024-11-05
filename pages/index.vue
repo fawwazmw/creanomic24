@@ -24,7 +24,7 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
 import Hero from "~/components/landingpage/Hero.vue";
@@ -34,16 +34,20 @@ import Logo from "~/components/landingpage/Logo.vue";
 import SeaSponsor from "~/components/landingpage/SeaSponsor.vue";
 import Medpart from "~/components/landingpage/Medpart.vue";
 
-export default {
-  components: {
-    Header,
-    Footer,
-    Hero,
-    AboutUs,
-    Maskot,
-    Logo,
-    SeaSponsor,
-    Medpart,
-  },
-};
+// Define metadata untuk halaman ini
+definePageMeta({
+  head: {
+    title: "Home" // Judul khusus untuk halaman home
+  }
+});
+
+// Tambahkan metadata SEO jika diperlukan
+useSeoMeta({
+  title: "Creanomic UB | Home",
+  ogTitle: "Creanomic UB | Home",
+  description: "Official landing page of Creanomic Brawijaya University.",
+  ogDescription: "Welcome to the official landing page of Creanomic Brawijaya University.",
+  ogImage: "https://example.com/crea-icon.svg",
+  twitterCard: "summary_large_image",
+});
 </script>

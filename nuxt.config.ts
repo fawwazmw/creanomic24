@@ -1,15 +1,18 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.js
+import { defineNuxtConfig } from 'nuxt/config';
+
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  $development: undefined, $env: undefined, $meta: undefined, $production: undefined, $test: undefined,
+  compatibility: {
+    compatibilityDate: "2024-04-03",
+  },
+
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss"],
-
-  // Tambahkan CSS global
   css: ["~/assets/css/reset.css"],
 
   app: {
     head: {
-      title: "Creanomic UB | Landing Page",
       htmlAttrs: {
         lang: "en",
       },
@@ -19,10 +22,20 @@ export default defineNuxtConfig({
         {
           hid: "description",
           name: "description",
-          content: "This is Official Of Creanomic Brawijaya University Website",
+          content: "This is the Official Creanomic Brawijaya University Website",
         },
         { name: "author", content: "FWZ.dev" },
-        { name: "theme-color", content: "#5a47cc" }, // Optional for mobile browsers
+        { name: "theme-color", content: "#5a47cc" },
+        { hid: "keywords", name: "keywords", content: "Creanomic, Brawijaya University, Official Website" },
+        { hid: "robots", name: "robots", content: "index, follow" },
+        { hid: "og:type", property: "og:type", content: "website" },
+        { hid: "og:title", property: "og:title", content: "Creanomic UB | Home" },
+        { hid: "og:description", property: "og:description", content: "Welcome to the official landing page of Creanomic Brawijaya University." },
+        { hid: "og:image", property: "og:image", content: "https://example.com/crea-icon.svg" },
+        { hid: "twitter:card", name: "twitter:card", content: "summary_large_image" },
+        { hid: "twitter:title", name: "twitter:title", content: "Creanomic UB | Home" },
+        { hid: "twitter:description", name: "twitter:description", content: "The official landing page of Creanomic Brawijaya University." },
+        { hid: "twitter:image", name: "twitter:image", content: "https://example.com/crea-icon.svg" },
       ],
       link: [
         {
@@ -43,18 +56,18 @@ export default defineNuxtConfig({
           href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap",
         },
         {
-          // Tambahkan CSS Flowbite dari CDN
           rel: "stylesheet",
           href: "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css",
         },
       ],
       script: [
         {
-          // Tambahkan JavaScript Flowbite dari CDN dengan defer
           src: "https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js",
-          defer: true, // Jalankan script setelah HTML termuat
+          defer: true,
         },
       ],
     },
   },
+
+  compatibilityDate: "2024-11-06"
 });
