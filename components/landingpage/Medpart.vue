@@ -15,17 +15,60 @@
 
     <!-- Media Partner Grid with adjusted margin for spacing -->
     <div
-        class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-x-0 gap-y-20 mt-[150px] justify-center mediagrid z-0"
+        class="grid grid-cols-10 gap-x-4 gap-y-20 mt-[150px] mx-4 justify-center mediagrid z-0"
         :style="{
-        gridTemplateRows: isMobile ? 'repeat(3, 100px)' : 'repeat(2, 150px)',
+        gridTemplateRows: isMobile ? 'repeat(2, 100px)' : 'repeat(1, 150px)',
       }"
     >
       <img
-          v-for="n in 14"
-          :key="n"
-          src="assets/medpart.svg"
-          :alt="`Media Partner ${n}`"
-          :class="['medpart-image', 'image-size', n <= 7 ? 'row1' : 'row2']"
+          src="assets/medpart1.svg"
+          alt="Media Partner 1"
+          class="medpart-image image-size"
+      />
+      <img
+          src="assets/medpart2.svg"
+          alt="Media Partner 2"
+          class="medpart-image image-size"
+      />
+      <img
+          src="assets/medpart3.svg"
+          alt="Media Partner 3"
+          class="medpart-image image-size"
+      />
+      <img
+          src="assets/medpart4.svg"
+          alt="Media Partner 4"
+          class="medpart-image image-size"
+      />
+      <img
+          src="assets/medpart5.svg"
+          alt="Media Partner 5"
+          class="medpart-image image-size"
+      />
+      <img
+          src="assets/medpart6.svg"
+          alt="Media Partner 6"
+          class="medpart-image image-size"
+      />
+      <img
+          src="assets/medpart7.svg"
+          alt="Media Partner 7"
+          class="medpart-image image-size"
+      />
+      <img
+          src="assets/medpart8.svg"
+          alt="Media Partner 8"
+          class="medpart-image image-size"
+      />
+      <img
+          src="assets/medpart9.svg"
+          alt="Media Partner 9"
+          class="medpart-image image-size"
+      />
+      <img
+          src="assets/medpart10.svg"
+          alt="Media Partner 10"
+          class="medpart-image image-size"
       />
     </div>
 
@@ -77,8 +120,7 @@ export default {
         },
       });
 
-      // Adjust .row1 to slide in from top (y starts negative, moves to 0)
-      gsap.from(".row1", {
+      gsap.from(".medpart-image", {
         y: -50, // Slide from top
         opacity: 0,
         duration: 1.5,
@@ -89,23 +131,7 @@ export default {
           start: "top 90%",
           end: "center center",
           scrub: true,
-          onComplete: () => this.startInfiniteScroll(".row1", -200),
-        },
-      });
-
-      // Adjust .row2 to slide in from bottom (y starts positive, moves to 0)
-      gsap.from(".row2", {
-        y: 50, // Slide from bottom
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: ".mediagrid",
-          start: "top 80%",
-          end: "center center",
-          scrub: true,
-          onComplete: () => this.startInfiniteScroll(".row2", 200),
+          onComplete: () => this.startInfiniteScroll(".medpart-image", -200),
         },
       });
 
@@ -161,8 +187,8 @@ export default {
 
 .medpart-image {
   transition: width 0.3s ease, height 0.3s ease;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 @media (max-width: 1920px) {
@@ -176,7 +202,7 @@ export default {
     margin-top: 16vh;
   }
   .image-size {
-    width: 18vw;
+    width: 12vw;
     height: 18vh;
   }
   .callingout {
@@ -195,7 +221,7 @@ export default {
     margin-top: 16vh;
   }
   .image-size {
-    width: 18vw;
+    width: 12vw;
     height: 18vh;
   }
   .callingout {
@@ -214,7 +240,7 @@ export default {
     margin-top: 16vh;
   }
   .image-size {
-    width: 18vw;
+    width: 12vw;
     height: 18vh;
   }
   .callingout {
@@ -234,7 +260,7 @@ export default {
     gap: normal;
   }
   .image-size {
-    width: 18vw;
+    width: 12vw;
     height: 18vh;
   }
   .callingout {
@@ -254,7 +280,7 @@ export default {
     gap: normal;
   }
   .image-size {
-    width: 18vw;
+    width: 12vw;
     height: 18vh;
   }
   .callingout {
@@ -271,14 +297,9 @@ export default {
     height: 70px;
   }
   .mediagrid {
-    gap-x: 0px;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on mobile */
+    gap-x: 10px;
     gap-y: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Keep 3 columns in general */
-  }
-  /* Target the last two items to center them in a row with two columns */
-  .mediagrid .medpart-image:nth-last-child(-n + 2) {
-    grid-column: 2 / span 1; /* Positions the last two items in the center columns */
   }
 }
 
@@ -291,7 +312,8 @@ export default {
     height: 60px;
   }
   .mediagrid {
-    gap-x: 0px;
+    grid-template-columns: repeat(4, 1fr);
+    gap-x: 10px;
     gap-y: 20px;
   }
 }
@@ -305,7 +327,8 @@ export default {
     height: 50px;
   }
   .mediagrid {
-    gap-x: 0px;
+    grid-template-columns: repeat(4, 1fr);
+    gap-x: 10px;
     gap-y: 20px;
   }
 }

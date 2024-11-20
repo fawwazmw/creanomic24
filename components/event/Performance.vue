@@ -33,25 +33,17 @@
     </div>
 
     <!-- Row of Images Below the Text -->
-    <!-- Left Image -->
     <img
         src="assets/left_image.svg"
         alt="Left Image"
-        class="absolute w-[300px] h-[11vh] object-cover left-[10vw] top-[150vh] leftimage"
-    />
-
-    <!-- Center Image -->
-    <img
-        src="assets/center_image.svg"
-        alt="Center Image"
-        class="absolute w-[434px] h-[11vh] object-cover justify-center top-[150vh] centerimage"
+        class="absolute w-[432px] h-[98px] object-cover left-[10vw] top-[150vh] leftimage"
     />
 
     <!-- Right Image -->
     <img
         src="assets/right_image.svg"
         alt="Right Image"
-        class="absolute w-[300px] h-[11vh] object-cover right-[10vw] top-[150vh] rightimage"
+        class="absolute w-[432px] h-[98px] object-cover right-[10vw] top-[150vh] rightimage"
     />
 
     <!-- Center Perform -->
@@ -83,7 +75,7 @@ export default {
   data() {
     return {
       textWords:
-          `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur dolores aliquam quis, molestiae ullam ad reiciendis dolorem amet. Quibusdam quam molestias expedita inventore animi odio tempore accusantium reiciendis et vero, harum nam impedit repellendus odit quos laborum rerum ea ex placeat esse quis labore ipsum! Cumque dolorem, quibusdam minus delectus unde mollitia voluptatibus a quod, eius, accusamus officia voluptatem natus cum incidunt error at. A reprehenderit repellendus, illum alias nulla sint. Quae nisi distinctio asperiores pariatur ea veniam eveniet aliquam odio deserunt itaque.`.split(
+          `Performance dalam rangkaian acara Creanomic menghadirkan pertunjukan seni dan hiburan yang dirancang untuk memeriahkan suasana. Dengan kombinasi penampilan seni tradisional, musik yang memukau, dan eksplorasi bakat baru, performance di Creanomic menjadi wujud nyata dari kesatuan antara budaya, kreativitas, dan hiburan.`.split(
               " "
           ),
     };
@@ -239,18 +231,13 @@ export default {
     font-size: xx-large;
   }
   .leftimage {
-    width: 20vw;
-    height: auto;
-    top: 140vh;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
+    width: 432px;
+    height: 98px;
     top: 140vh;
   }
   .rightimage {
-    width: 20vw;
-    height: auto;
+    width: 432px;
+    height: 98px;
     top: 140vh;
   }
   .centerperform {
@@ -298,19 +285,14 @@ export default {
     font-size: xx-large;
   }
   .leftimage {
-    width: 20vw;
-    height: auto;
-    top: 160vh;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
-    top: 160vh;
+    width: 432px;
+    height: 98px;
+    top: 165vh;
   }
   .rightimage {
-    width: 20vw;
-    height: auto;
-    top: 160vh;
+    width: 432px;
+    height: 98px;
+    top: 165vh;
   }
   .centerperform {
 
@@ -371,8 +353,8 @@ export default {
 
 @media (max-width: 1024px) {
   .performance-section {
-    background-size: 100% 2600px;
-    height: 2600px;
+    background-size: 100% 2700px;
+    height: 2700px;
   }
 
   .performancehead {
@@ -389,16 +371,12 @@ export default {
   }
   .leftimage {
     left: 10vw;
-    width: 20vw;
-    height: auto;
-  }
-  .centerimage {
-    width: 30vw;
+    width: 35vw;
     height: auto;
   }
   .rightimage {
     right: 10vw;
-    width: 20vw;
+    width: 35vw;
     height: auto;
   }
   .centerperform {
@@ -415,8 +393,8 @@ export default {
 
 @media (max-width: 768px) {
   .performance-section {
-    background-size: 100% 2200px;
-    height: 2200px;
+    background-size: 100% 2500px;
+    height: 2500px;
   }
 
   .performancehead {
@@ -432,18 +410,20 @@ export default {
     font-size: larger;
   }
   .leftimage {
-    left: 10vw;
-    width: 20vw;
+    width: 50vw;
     height: auto;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
+    top: 160vh;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .rightimage {
-    right: 10vw;
-    width: 20vw;
+    width: 50vw;
     height: auto;
+    top: 190vh;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .centerperform {
     width: 90vw;
@@ -478,22 +458,17 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
-    top: 210vh;
+    top: 200vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
     top: 230vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 250vh;
     left: 0;
     right: 0;
     margin: auto;
@@ -532,22 +507,17 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
     top: 220vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
-    top: 240vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 260vh;
+    top: 250vh;
     left: 0;
     right: 0;
     margin: auto;
@@ -584,22 +554,17 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
-    top: 230vh;
+    top: 250vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
-    top: 250vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 270vh;
+    top: 275vh;
     left: 0;
     right: 0;
     margin: auto;

@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       textWords:
-        `Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur temporibus numquam quas reiciendis maxime aspernatur consectetur sit harum iste, tempora error minus corporis at? Quod autem, cum aut, aspernatur cumque officia sint, nisi quasi saepe placeat ratione neque odio delectus nihil ut magnam! Blanditiis illo cupiditate deserunt accusamus facere iste, iure voluptate dolorum dolore enim aut nesciunt, nam quaerat necessitatibus laudantium nisi consequuntur fuga laboriosam dignissimos, nobis sapiente expedita?`.split(
+        `Creanomic merupakan kegiatan yang dilaksanakan setiap tahun dalam program kerja BEM Sekolah Vokasi Universitas Brawijaya yang merupakan wadah bagi para wirausahawan muda untuk menyalurkan minat dan bakat yang ditunjukan oleh para mahasiswa, baik umum, nasional maupun internasional. Dimana acara Creanomic sendiri secara konsisten mengangkat topik kreativitas dan inovasi, mempertahankan eksplorasi bisnis ekonomi dan teknologi dengan juga menghadirkan acara-acara baru, pameran seni dan seminar.`.split(
           " "
         ),
     };

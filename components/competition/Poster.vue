@@ -58,7 +58,7 @@
     <img
         src="assets/timeline.svg"
         alt="Center Timeline"
-        class="absolute w-[1400px] h-auto object-cover justify-center top-[180vh] timeline"
+        class="absolute w-[1420px] h-auto object-cover justify-center top-[180vh] timeline"
     />
 
     <!-- Guidebook with Hover Effect -->

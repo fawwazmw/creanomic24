@@ -2,7 +2,6 @@
   <section
       class="jobfair-section relative bg-white h-auto md:h-[3236px] flex flex-col items-center justify-start md:px-0 overflow-hidden"
   >
-
     <!-- New Image Below Header -->
     <div class="w-full flex justify-center mt-[28vh] jobfairhead">
       <img
@@ -26,9 +25,7 @@
         class="absolute top-[100vh] flex items-center justify-center w-[1030px] h-[292px] text-center text-container maintext"
     >
       <h2 class="text-2xl font-medium font-poppins text-white textmain">
-        <span v-for="(word, index) in textWords" :key="index" class="word"
-        >{{ word }}
-        </span>
+        <span v-for="(word, index) in textWords" :key="index" class="word">{{ word }}</span>
       </h2>
     </div>
 
@@ -37,21 +34,14 @@
     <img
         src="assets/left_image.svg"
         alt="Left Image"
-        class="absolute w-[300px] h-[11vh] object-cover left-[10vw] top-[150vh] leftimage"
-    />
-
-    <!-- Center Image -->
-    <img
-        src="assets/center_image.svg"
-        alt="Center Image"
-        class="absolute w-[434px] h-[11vh] object-cover justify-center top-[150vh] centerimage"
+        class="absolute w-[432px] h-[98px] object-cover left-[10vw] top-[150vh] leftimage"
     />
 
     <!-- Right Image -->
     <img
         src="assets/right_image.svg"
         alt="Right Image"
-        class="absolute w-[300px] h-[11vh] object-cover right-[10vw] top-[150vh] rightimage"
+        class="absolute w-[432px] h-[98px] object-cover right-[10vw] top-[150vh] rightimage"
     />
 
     <img
@@ -75,10 +65,9 @@ export default {
   name: "Jobfair",
   data() {
     return {
-      textWords:
-          `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur dolores aliquam quis, molestiae ullam ad reiciendis dolorem amet. Quibusdam quam molestias expedita inventore animi odio tempore accusantium reiciendis et vero, harum nam impedit repellendus odit quos laborum rerum ea ex placeat esse quis labore ipsum! Cumque dolorem, quibusdam minus delectus unde mollitia voluptatibus a quod, eius, accusamus officia voluptatem natus cum incidunt error at. A reprehenderit repellendus, illum alias nulla sint. Quae nisi distinctio asperiores pariatur ea veniam eveniet aliquam odio deserunt itaque.`.split(
-              " "
-          ),
+      textWords: `Job Fair merupakan sebuah kegiatan yang dirancang untuk memfasilitasi pertemuan antara mahasiswa fakultas vokasi dan berbagai perusahaan terkemuka. Acara ini bertujuan memberikan ruang bagi para pencari kerja untuk mengeksplorasi peluang karir, memahami kebutuhan dunia kerja, dan berinteraksi langsung dengan para perekrut dari berbagai industri. Dalam kegiatan ini, peserta memiliki kesempatan untuk mengikuti sesi career counseling dan networking.`.split(
+          " "
+      ),
     };
   },
   mounted() {
@@ -123,21 +112,6 @@ export default {
       },
     });
 
-    // Animate aboutus.svg with scale and from bottom for smooth entrance
-    gsap.from(".centerimage", {
-      y: 50, // Move slightly up from below
-      scale: 1.1, // Start slightly scaled up
-      opacity: 0,
-      duration: 3,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".centerimage",
-        start: "top 90%",
-        end: "bottom 50%",
-        scrub: true,
-      },
-    });
-
     // Animasi ombak kanan dari kanan
     gsap.from(".rightimage", {
       x: 50, // Start from a slight offset instead of fully outside the viewport
@@ -166,7 +140,6 @@ export default {
     });
   },
 };
-
 </script>
 
 <style scoped>
@@ -205,7 +178,6 @@ export default {
   }
 
   .jobfairhead {
-
   }
   .gelomabang {
   }
@@ -217,18 +189,13 @@ export default {
     font-size: xx-large;
   }
   .leftimage {
-    width: 20vw;
-    height: auto;
-    top: 140vh;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
+    width: 432px;
+    height: 98px;
     top: 140vh;
   }
   .rightimage {
-    width: 20vw;
-    height: auto;
+    width: 432px;
+    height: 98px;
     top: 140vh;
   }
   .bungatengah {
@@ -242,29 +209,21 @@ export default {
     height: 2400px;
   }
   .jobfairhead {
-
   }
   .gelomabang {
   }
   .maintext {
-
   }
   .textmain {
-
   }
   .leftimage {
-    width: 20vw;
-    height: auto;
-    top: 165vh;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
+    width: 432px;
+    height: 98px;
     top: 165vh;
   }
   .rightimage {
-    width: 20vw;
-    height: auto;
+    width: 432px;
+    height: 98px;
     top: 165vh;
   }
   .bungatengah {
@@ -277,24 +236,16 @@ export default {
     height: 2078px;
   }
   .jobfairhead {
-
   }
   .gelomabang {
   }
   .maintext {
-
   }
   .textmain {
-
   }
   .leftimage {
-
-  }
-  .centerimage {
-
   }
   .rightimage {
-
   }
   .bungatengah {
   }
@@ -320,16 +271,12 @@ export default {
   }
   .leftimage {
     left: 10vw;
-    width: 20vw;
-    height: auto;
-  }
-  .centerimage {
-    width: 30vw;
+    width: 35vw;
     height: auto;
   }
   .rightimage {
     right: 10vw;
-    width: 20vw;
+    width: 35vw;
     height: auto;
   }
   .bungatengah {
@@ -360,21 +307,20 @@ export default {
     font-size: larger;
   }
   .leftimage {
-    left: 10vw;
-    width: 20vw;
+    width: 50vw;
     height: auto;
-    top: 180vh;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
-    top: 180vh;
+    top: 160vh;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .rightimage {
-    right: 10vw;
-    width: 20vw;
+    width: 50vw;
     height: auto;
-    top: 180vh;
+    top: 190vh;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .bungatengah {
     width: 90vw;
@@ -404,22 +350,17 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
     top: 200vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
-    top: 220vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 240vh;
+    top: 230vh;
     left: 0;
     right: 0;
     margin: auto;
@@ -452,22 +393,17 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
     top: 220vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
-    top: 240vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 260vh;
+    top: 250vh;
     left: 0;
     right: 0;
     margin: auto;
@@ -500,22 +436,17 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
     top: 250vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
-    top: 265vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 280vh;
+    top: 275vh;
     left: 0;
     right: 0;
     margin: auto;

@@ -12,6 +12,15 @@
       />
     </div>
 
+    <!-- New Text Above Gelombang.svg -->
+    <div
+        class="absolute top-[100vh] flex items-center justify-center w-[1030px] h-[292px] text-center text-container maintext"
+    >
+      <h2 class="text-2xl font-medium font-poppins text-white textmain">
+        <span v-for="(word, index) in textWords" :key="index" class="word">{{ word }}</span>
+      </h2>
+    </div>
+
     <!-- Grid Container for Card Images with href links -->
     <div class="card-grid w-full absolute flex flex-col items-center gap-y-6 top-[150vh] maingrid">
       <a href="/competition/poster" class="grid-item">
@@ -44,6 +53,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "CompetitionLanding",
+  data() {
+    return {
+      textWords: `Job Fair merupakan sebuah kegiatan yang dirancang untuk memfasilitasi pertemuan antara mahasiswa fakultas vokasi dan berbagai perusahaan terkemuka. Acara ini bertujuan memberikan ruang bagi para pencari kerja untuk mengeksplorasi peluang karir, memahami kebutuhan dunia kerja, dan berinteraksi langsung dengan para perekrut dari berbagai industri. Dalam kegiatan ini, peserta memiliki kesempatan untuk mengikuti sesi career counseling dan networking.`.split(
+          " "
+      ),
+    };
+  },
   mounted() {
     // Animasi untuk competition dari bawah ke atas
     gsap.from(".competition", {
@@ -52,6 +68,25 @@ export default {
       opacity: 0, // Mulai dengan opacity 0 (tidak terlihat)
       ease: "power2.out", // Easing untuk animasi yang halus
     });
+
+    // Animasi perubahan warna per kata pada text
+    gsap.fromTo(
+        ".word",
+        { color: "#1D3557" }, // Warna awal: biru muda
+        {
+          color: "#8AB6D6", // Warna akhir: biru tua yang lebih gelap
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".textmain",
+            start: "top 90%",
+            end: "center center",
+            scrub: true,
+          },
+          stagger: {
+            each: 0.1,
+          },
+        }
+    );
 
     // Animating each grid item individually on scroll with GSAP and ScrollTrigger
     gsap.utils.toArray(".grid-item").forEach((item, index) => {
@@ -108,6 +143,15 @@ export default {
   display: flex;
 }
 
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.word {
+  display: inline-block;
+  margin-right: 0.3em; /* Ensures proper spacing between words */
+}
+
 @media (max-width: 1920px) {
   .competition-section {
     background-size: 100% 4800px;
@@ -116,8 +160,15 @@ export default {
   .competition {
 
   }
+  .maintext {
+    width: 70vw;
+    height: auto;
+  }
+  .textmain {
+    font-size: xx-large;
+  }
   .maingrid {
-    top: 120vh;
+    top: 140vh;
   }
   .poster {
     width: 1500px;
@@ -150,8 +201,12 @@ export default {
   .competition {
 
   }
+  .maintext {
+  }
+  .textmain {
+  }
   .maingrid {
-    top: 140vh;
+    top: 160vh;
   }
   .poster {
     width: 1200px;
@@ -183,6 +238,10 @@ export default {
   .competition {
 
   }
+  .maintext {
+  }
+  .textmain {
+  }
   .maingrid {
 
   }
@@ -205,14 +264,20 @@ export default {
 
 @media (max-width: 1024px) {
   .competition-section {
-    background-size: 100% 2700px;
-    height: 2700px;
+    background-size: 100% 3200px;
+    height: 3200px;
   }
 
   .competition {
   }
+  .maintext {
+    width: 85vw;
+  }
+  .textmain {
+    font-size: larger;
+  }
   .maingrid {
-    top: 120vh;
+    top: 160vh;
   }
   .poster {
     width: 800px;
@@ -238,14 +303,21 @@ export default {
 
 @media (max-width: 768px) {
   .competition-section {
-    background-size: 100% 2500px;
-    height: 2500px;
+    background-size: 100% 2800px;
+    height: 2800px;
   }
 
   .competition {
   }
+  .maintext {
+    width: 85vw;
+    top: 110vh;
+  }
+  .textmain {
+    font-size: larger;
+  }
   .maingrid {
-    top: 120vh;
+    top: 170vh;
   }
   .poster {
     width: 600px;
@@ -271,14 +343,21 @@ export default {
 
 @media (max-width: 425px) {
   .competition-section {
-    background-size: 100% 1800px;
-    height: 1800px;
+    background-size: 100% 2600px;
+    height: 2600px;
   }
 
   .competition {
   }
-  .maingrid {
+  .maintext {
+    width: 85vw;
     top: 120vh;
+  }
+  .textmain {
+    font-size: large;
+  }
+  .maingrid {
+    top: 200vh;
   }
   .poster {
     width: 350px;
@@ -304,14 +383,21 @@ export default {
 
 @media (max-width: 375px) {
   .competition-section {
-    background-size: 100% 1800px;
-    height: 1800px;
+    background-size: 100% 2800px;
+    height: 2800px;
   }
 
   .competition {
   }
+  .maintext {
+    width: 85vw;
+    top: 130vh;
+  }
+  .textmain {
+    font-size: large;
+  }
   .maingrid {
-    top: 120vh;
+    top: 210vh;
   }
   .poster {
     width: 300px;
@@ -337,14 +423,25 @@ export default {
 
 @media (max-width: 320px) {
   .competition-section {
-    background-size: 100% 1800px;
-    height: 1800px;
+    background-size: 100% 2800px;
+    height: 2800px;
   }
 
   .competition {
   }
+  .maintext {
+    width: 85vw;
+    top: 140vh;
+  }
+  .maintext {
+    width: 85vw;
+    top: 140vh;
+  }
+  .textmain {
+    font-size: large;
+  }
   .maingrid {
-    top: 120vh;
+    top: 240vh;
   }
   .poster {
     width: 250px;

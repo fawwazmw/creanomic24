@@ -1,8 +1,5 @@
 <template>
-  <section
-      class="merchandise-section relative bg-white flex flex-col items-center justify-start md:px-0 overflow-hidden"
-  >
-
+  <section class="merchandise-section relative flex flex-col items-center justify-start md:px-0 overflow-hidden">
     <!-- Single Image Content -->
     <div class="image-container w-full flex flex-col items-center mt-[13vh]">
       <img
@@ -12,7 +9,7 @@
       />
     </div>
 
-    <!-- New Image Below Header with Positioning Using Top-[50vh] -->
+    <!-- Main Merchandise Image -->
     <div class="w-full absolute flex justify-center top-[50vh] merchandise">
       <img
           src="assets/merchandise.svg"
@@ -21,44 +18,94 @@
       />
     </div>
 
-    <!-- Card Images -->
-    <img
-        src="assets/card_merchandise.svg"
-        alt="Left Card Top"
-        class="absolute w-[570px] h-auto object-cover left-[10vw] leftcardtop"
-    />
+    <!-- Below Merchandise Images -->
+    <div class="w-full flex flex-col items-center absolute top-[120vh]">
+      <img
+          src="assets/maintshirt.svg"
+          alt="Large Image"
+          class="w-[1170px] h-auto mx-auto maintshirt"
+      />
 
-    <img
-        src="assets/card_merchandise.svg"
-        alt="Right Card Top"
-        class="absolute w-[570px] h-auto object-cover right-[10vw] rightcardtop"
-    />
+      <div class="flex justify-center items-center w-full mt-8 gap-6">
+        <img
+            src="assets/tshirt_left.svg"
+            alt="Left Image"
+            class="w-[570px] h-auto tshirt-kiri"
+        />
+        <img
+            src="assets/tshirt_right.svg"
+            alt="Right Image"
+            class="w-[570px] h-auto tshirt-kanan"
+        />
+      </div>
 
-    <img
-        src="assets/card_merchandise.svg"
-        alt="Left Card Center"
-        class="absolute w-[570px] h-auto object-cover left-[10vw] leftcardcenter"
-    />
+      <img
+          src="assets/totebag.svg"
+          alt="Second Large Image"
+          class="w-[1170px] h-auto mx-auto mt-8 totebag"
+      />
 
-    <img
-        src="assets/card_merchandise.svg"
-        alt="Right Card Center"
-        class="absolute w-[570px] h-auto object-cover right-[10vw] rightcardcenter"
-    />
+      <img
+          src="assets/keychain.svg"
+          alt="Third Large Image"
+          class="w-[1170px] h-auto mx-auto mt-8 keychain"
+      />
 
-    <img
-        src="assets/card_merchandise.svg"
-        alt="Left Card Bottom"
-        class="absolute w-[570px] h-auto object-cover left-[10vw] leftcardbottom"
-    />
+      <img
+          src="assets/textbundling.svg"
+          alt="Thin Image"
+          class="w-[1170px] h-auto mx-auto mt-8 textbundling"
+      />
 
-    <img
-        src="assets/card_merchandise.svg"
-        alt="Right Card Bottom"
-        class="absolute w-[570px] h-auto object-cover right-[10vw] rightcardbottom"
-    />
+      <div class="flex justify-center w-full gap-8 bundlinggroup">
+        <img
+            src="assets/bundling_left.svg"
+            alt="Left Small Image"
+            class="w-[370px] h-auto leftbundling"
+        />
+        <img
+            src="assets/bundling_center.svg"
+            alt="Center Small Image"
+            class="w-[370px] h-auto centerbundling"
+        />
+        <img
+            src="assets/bundling_right.svg"
+            alt="Right Small Image"
+            class="w-[370px] h-auto rightbundling"
+        />
+      </div>
 
-    <!-- Gradient Background Section -->
+      <img
+          src="assets/bundling_main.svg"
+          alt="Fourth Large Image"
+          class="w-[1170px] h-auto mx-auto mt-8 mainbundling"
+      />
+
+      <div class="flex justify-center w-full mt-[50vh] gap-10 maincp">
+        <a href="https://wa.me/6285602667927?text=Hello%20I%20am%20interested%20in%20your%20guidebook!" class="w-auto h-auto">
+          <img
+              src="assets/cp1.svg"
+              alt="CP 1"
+              class="object-cover w-full h-auto cp1"
+          />
+        </a>
+
+        <a href="https://wa.me/6288224647288?text=Hello%20Saya%20tertarik%20dengan%20merch%20Creanomic%20ini!" class="w-auto h-auto">
+          <img
+              src="assets/cp2.svg"
+              alt="CP 2"
+              class="object-cover w-full h-auto cp2"
+          />
+        </a>
+
+      </div>
+
+      <img
+          src="assets/footerimage.svg"
+          alt="Footer Image"
+          class="w-[1170px] h-auto mx-auto footerimage"
+      />
+    </div>
     <div class="gradient-background w-full -mt-1"></div>
   </section>
 </template>
@@ -72,101 +119,177 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   name: "Merchandise",
   mounted() {
-    // Animasi untuk merchandise dari bawah ke atas
+    // GSAP Animations
     gsap.from(".merchandise", {
-      duration: 2, // Durasi animasi
-      y: 100, // Memulai dari 100px di bawah posisinya
-      opacity: 0, // Mulai dengan opacity 0 (tidak terlihat)
-      ease: "power2.out", // Easing untuk animasi yang halus
+      duration: 2,
+      y: 100,
+      opacity: 0,
+      ease: "power2.out",
     });
 
-    // Animasi ombak kiri dari kiri
-    gsap.from(".leftcardtop", {
-      x: -50, // Start from a slight offset instead of fully outside the viewport
+    gsap.utils.toArray(".image-group img").forEach((img) => {
+      gsap.from(img, {
+        y: 50,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: img,
+          start: "top 90%",
+          end: "bottom 10%",
+          scrub: true,
+        },
+      });
+    });
+
+    gsap.from(".maintshirt", {
+      y: 100, // Slightly below the starting position
       opacity: 0,
-      duration: 3,
+      duration: 2.5,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".leftcardtop",
+        trigger: ".maintshirt",
         start: "top 90%",
-        end: "bottom 20%",
+        end: "bottom 50%",
         scrub: true,
       },
     });
 
     // Animasi ombak kanan dari kanan
-    gsap.from(".rightcardtop", {
+    gsap.from(".tshirt-kanan", {
       x: 50, // Start from a slight offset instead of fully outside the viewport
       opacity: 0,
       duration: 3,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".rightcardtop",
+        trigger: ".tshirt-kanan",
         start: "top 90%",
-        end: "bottom 20%",
+        end: "bottom 10%",
         scrub: true,
       },
     });
 
     // Animasi ombak kiri dari kiri
-    gsap.from(".leftcardcenter", {
+    gsap.from(".tshirt-kiri", {
       x: -50, // Start from a slight offset instead of fully outside the viewport
       opacity: 0,
       duration: 3,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".leftcardcenter",
+        trigger: ".tshirt-kiri",
         start: "top 90%",
-        end: "bottom 40%",
+        end: "bottom 10%",
         scrub: true,
       },
     });
 
-    // Animasi ombak kanan dari kanan
-    gsap.from(".rightcardcenter", {
-      x: 50, // Start from a slight offset instead of fully outside the viewport
+    gsap.from(".totebag", {
+      y: 100, // Slightly below the starting position
       opacity: 0,
-      duration: 3,
+      duration: 2.5,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".rightcardcenter",
+        trigger: ".totebag",
         start: "top 90%",
-        end: "bottom 40%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+
+    gsap.from(".keychain", {
+      y: 100, // Slightly below the starting position
+      opacity: 0,
+      duration: 2.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".keychain",
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+
+    gsap.from(".textbundling", {
+      y: 100, // Slightly below the starting position
+      opacity: 0,
+      duration: 2.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".textbundling",
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+
+    gsap.from(".bundlinggroup", {
+      y: 100, // Slightly below the starting position
+      opacity: 0,
+      duration: 2.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".bundlinggroup",
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+
+    gsap.from(".mainbundling", {
+      y: 100, // Slightly below the starting position
+      opacity: 0,
+      duration: 2.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".mainbundling",
+        start: "top 90%",
+        end: "bottom 50%",
         scrub: true,
       },
     });
 
     // Animasi ombak kiri dari kiri
-    gsap.from(".leftcardbottom", {
+    gsap.from(".cp1", {
       x: -50, // Start from a slight offset instead of fully outside the viewport
       opacity: 0,
       duration: 3,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".leftcardbottom",
+        trigger: ".cp1",
         start: "top 90%",
-        end: "bottom 40%",
+        end: "bottom 10%",
         scrub: true,
       },
     });
 
     // Animasi ombak kanan dari kanan
-    gsap.from(".rightcardbottom", {
+    gsap.from(".cp2", {
       x: 50, // Start from a slight offset instead of fully outside the viewport
       opacity: 0,
       duration: 3,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".rightcardbottom",
+        trigger: ".cp2",
         start: "top 90%",
-        end: "bottom 40%",
+        end: "bottom 10%",
         scrub: true,
       },
     });
 
+    gsap.from(".footerimage", {
+      y: 100, // Slightly below the starting position
+      opacity: 0,
+      duration: 2.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".footerimage",
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
   },
 };
-
 </script>
 
 <style scoped>
@@ -175,7 +298,11 @@ export default {
 
 /* Applying necessary height and gradient background via custom CSS */
 .gradient-background {
-  height: 3000px;
+  position: absolute;
+  top: 34vh;
+  left: 0;
+  width: 100%;
+  height: 2078px;
   background: linear-gradient(
       180deg,
       #201169 0%,
@@ -183,241 +310,227 @@ export default {
       #3572ef 65%,
       #ffffff 100%
   );
+  z-index: -1;
 }
 
 .merchandise-section {
   overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
+.merchandise-section {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-group img {
+  display: block;
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 1920px) {
   .merchandise-section {
-    background-size: 100% 3400px;
-    height: 3400px;
+    background-size: 100% 5800px;
+    height: 5800px;
+  }
+  .gradient-background {
+    top: 32vh;
+    height: 5400px;
   }
   .gelomabang {
   }
+  .cp1 {
+  }
+  .cp2 {
+  }
+  .footerimage {
+    width: 100vw;
+    height: auto;
+  }
   .merchandise {
 
-  }
-  .leftcardtop {
-    width: 700px;
-    height: auto;
-    top: 1200px;
-  }
-  .rightcardtop {
-    width: 700px;
-    height: auto;
-    top: 1200px;
-  }
-  .leftcardcenter {
-    width: 700px;
-    height: auto;
-    top: 1800px;
-  }
-  .rightcardcenter {
-    width: 700px;
-    height: auto;
-    top: 1800px;
-  }
-  .leftcardbottom {
-    width: 700px;
-    height: auto;
-    top: 2400px;
-  }
-  .rightcardbottom {
-    width: 700px;
-    height: auto;
-    top: 2400px;
   }
 }
 
 @media (max-width: 1600px) {
   .merchandise-section {
-    background-size: 100% 3300px;
-    height: 3300px;
+    background-size: 100% 5800px;
+    height: 5800px;
+  }
+  .gradient-background {
+    top: 32vh;
+    height: 5400px;
   }
 
   .merchandise {
 
   }
   .gelomabang {
-  }
-  .leftcardtop {
-    width: 600px;
-    height: auto;
-    top: 1200px;
-  }
-  .rightcardtop {
-    width: 600px;
-    height: auto;
-    top: 1200px;
-  }
-  .leftcardcenter {
-    width: 600px;
-    height: auto;
-    top: 1800px;
-  }
-  .rightcardcenter {
-    width: 600px;
-    height: auto;
-    top: 1800px;
-  }
-  .leftcardbottom {
-    width: 600px;
-    height: auto;
-    top: 2400px;
-  }
-  .rightcardbottom {
-    width: 600px;
-    height: auto;
-    top: 2400px;
-  }
-  .bungatengah {
   }
 }
 
 @media (max-width: 1440px) {
   .merchandise-section {
-    background-size: 100% 3200px;
-    height: 3200px;
+    background-size: 100% 5800px;
+    height: 5800px;
+  }
+  .gradient-background {
+    top: 27vh;
+    height: 5500px;
   }
   .merchandise {
 
   }
+  .maintshirt {
+  }
+  .tshirt-kiri {
+  }
+  .tshirt-kanan {
+  }
+  .totebag {
+  }
+  .keychain {
+  }
+  textbundling {
+  }
+  .bundlinggroup {
+  }
+  .mainbundling {
+  }
+  .leftbundling {
+  }
+  .centerbundling {
+  }
+  .rightbundling {
+  }
+  .cp1 {
+  }
+  .cp2 {
+  }
+  .footerimage {
+  }
   .gelomabang {
-  }
-  .leftcardtop {
-    width: 570px;
-    height: auto;
-    top: 1200px;
-  }
-  .rightcardtop {
-    width: 570px;
-    height: auto;
-    top: 1200px;
-  }
-  .leftcardcenter {
-    width: 570px;
-    height: auto;
-    top: 1800px;
-  }
-  .rightcardcenter {
-    width: 570px;
-    height: auto;
-    top: 1800px;
-  }
-  .leftcardbottom {
-    width: 570px;
-    height: auto;
-    top: 2400px;
-  }
-  .rightcardbottom {
-    width: 570px;
-    height: auto;
-    top: 2400px;
-  }
-  .bungatengah {
   }
 }
 
 @media (max-width: 1024px) {
   .merchandise-section {
-    background-size: 100% 2400px;
-    height: 2400px;
+    background-size: 100% 5200px;
+    height: 5200px;
+  }
+  .gradient-background {
+    top: 24vh;
+    height: 5100px;
   }
 
-  .merchandise {
-  }
-  .leftcardtop {
-    width: 400px;
+  .maintshirt {
+    width: 80vw;
     height: auto;
-    top: 1000px;
   }
-  .rightcardtop {
-    width: 400px;
+  .tshirt-kiri {
+    width: 38vw;
     height: auto;
-    top: 1000px;
   }
-  .leftcardcenter {
-    width: 400px;
+  .tshirt-kanan {
+    width: 38vw;
     height: auto;
-    top: 1400px;
   }
-  .rightcardcenter {
-    width: 400px;
+  .totebag {
+    width: 80vw;
     height: auto;
-    top: 1400px;
   }
-  .leftcardbottom {
-    width: 400px;
+  .keychain {
+    width: 80vw;
     height: auto;
-    top: 1800px;
   }
-  .rightcardbottom {
-    width: 400px;
+  textbundling {
+  }
+  .bundlinggroup {
+  }
+  .mainbundling {
+    width: 80vw;
     height: auto;
-    top: 1800px;
   }
-  .bungatengah {
-    bottom: 20vh;
+  .leftbundling {
+    width: 25vw;
+    height: auto;
+  }
+  .centerbundling {
+    width: 25vw;
+    height: auto;
+  }
+  .rightbundling {
+    width: 25vw;
+    height: auto;
+  }
+  .cp1 {
+  }
+  .cp2 {
+  }
+  .footerimage {
   }
 }
 
 @media (max-width: 768px) {
   .merchandise-section {
-    background-size: 100% 4000px;
-    height: 4000px;
+    background-size: 100% 5200px;
+    height: 5200px;
+  }
+  .gradient-background {
+    top: 24vh;
+    height: 5100px;
   }
 
-  .merchandise {
-  }
-  .leftcardtop {
-    width: 460px;
+  .maintshirt {
+    width: 80vw;
     height: auto;
-    top: 1000px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardtop {
-    width: 460px;
+  .tshirt-kiri {
+    width: 38vw;
     height: auto;
-    top: 1400px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .leftcardcenter {
-    width: 460px;
+  .tshirt-kanan {
+    width: 38vw;
     height: auto;
-    top: 1800px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardcenter {
-    width: 460px;
+  .totebag {
+    width: 80vw;
     height: auto;
-    top: 2200px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .leftcardbottom {
-    width: 460px;
+  .keychain {
+    width: 80vw;
     height: auto;
-    top: 2600px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardbottom {
-    width: 460px;
+  textbundling {
+  }
+  .bundlinggroup {
+  }
+  .mainbundling {
+    width: 80vw;
     height: auto;
-    top: 3000px;
-    left: 0;
-    right: 0;
-    margin: auto;
+  }
+  .leftbundling {
+    width: 24vw;
+    height: auto;
+  }
+  .centerbundling {
+    width: 24vw;
+    height: auto;
+  }
+  .rightbundling {
+    width: 24vw;
+    height: auto;
+  }
+  .cp1 {
+    width: 30vw;
+    height: auto;
+  }
+  .cp2 {
+    width: 30vw;
+    height: auto;
+  }
+  .footerimage {
   }
 }
 
@@ -426,118 +539,128 @@ export default {
     background-size: 100% 3800px;
     height: 3800px;
   }
+  .gradient-background {
+    top: 19vh;
+    height: 3700px;
+  }
 
-  .merchandise {
-  }
-  .gelomabang {
-  }
-  .leftcardtop {
-    width: 350px;
+  .maintshirt {
+    width: 80vw;
     height: auto;
-    top: 1000px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardtop {
-    width: 350px;
+  .tshirt-kiri {
+    width: 37vw;
     height: auto;
-    top: 1400px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .leftcardcenter {
-    width: 350px;
+  .tshirt-kanan {
+    width: 37vw;
     height: auto;
-    top: 1800px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardcenter {
-    width: 350px;
+  .totebag {
+    width: 80vw;
     height: auto;
-    top: 2200px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .leftcardbottom {
-    width: 350px;
+  .keychain {
+    width: 80vw;
     height: auto;
-    top: 2600px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardbottom {
-    width: 350px;
+  textbundling {
+  }
+  .bundlinggroup {
+  }
+  .mainbundling {
+    width: 80vw;
     height: auto;
-    top: 3000px;
-    left: 0;
-    right: 0;
-    margin: auto;
+  }
+  .leftbundling {
+    width: 22vw;
+    height: auto;
+  }
+  .centerbundling {
+    width: 22vw;
+    height: auto;
+  }
+  .rightbundling {
+    width: 22vw;
+    height: auto;
+  }
+  .cp1 {
+    width: 30vw;
+    height: auto;
+  }
+  .cp2 {
+    width: 30vw;
+    height: auto;
+  }
+  .maincp {
+    margin-top: 30vh;
+  }
+  .footerimage {
   }
 }
 
 @media (max-width: 375px) {
   .merchandise-section {
-    background-size: 100% 3900px;
-    height: 3900px;
+    background-size: 100% 3800px;
+    height: 3800px;
+  }
+  .gradient-background {
+    top: 18vh;
+    height: 3700px;
   }
 
-  .merchandise {
-  }
-  .gelomabang {
-  }
-  .leftcardtop {
-    width: 320px;
+  .maintshirt {
+    width: 80vw;
     height: auto;
-    top: 1000px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardtop {
-    width: 320px;
+  .tshirt-kiri {
+    width: 37vw;
     height: auto;
-    top: 1400px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .leftcardcenter {
-    width: 320px;
+  .tshirt-kanan {
+    width: 37vw;
     height: auto;
-    top: 1800px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardcenter {
-    width: 320px;
+  .totebag {
+    width: 80vw;
     height: auto;
-    top: 2200px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .leftcardbottom {
-    width: 320px;
+  .keychain {
+    width: 80vw;
     height: auto;
-    top: 2600px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardbottom {
-    width: 320px;
+  textbundling {
+  }
+  .bundlinggroup {
+  }
+  .mainbundling {
+    width: 80vw;
     height: auto;
-    top: 3000px;
-    left: 0;
-    right: 0;
-    margin: auto;
+  }
+  .leftbundling {
+    width: 21vw;
+    height: auto;
+  }
+  .centerbundling {
+    width: 21vw;
+    height: auto;
+  }
+  .rightbundling {
+    width: 21vw;
+    height: auto;
+  }
+  .cp1 {
+    width: 30vw;
+    height: auto;
+  }
+  .cp2 {
+    width: 30vw;
+    height: auto;
+  }
+  .maincp {
+    margin-top: 30vh;
+  }
+  .footerimage {
   }
 }
 
@@ -546,58 +669,63 @@ export default {
     background-size: 100% 3800px;
     height: 3800px;
   }
+  .gradient-background {
+    top: 17vh;
+    height: 3700px;
+  }
 
-  .merchandise {
-  }
-  .gelomabang {
-  }
-  .leftcardtop {
-    width: 260px;
+  .maintshirt {
+    width: 80vw;
     height: auto;
-    top: 1000px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardtop {
-    width: 260px;
+  .tshirt-kiri {
+    width: 37vw;
     height: auto;
-    top: 1400px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .leftcardcenter {
-    width: 260px;
+  .tshirt-kanan {
+    width: 37vw;
     height: auto;
-    top: 1800px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardcenter {
-    width: 260px;
+  .totebag {
+    width: 80vw;
     height: auto;
-    top: 2200px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .leftcardbottom {
-    width: 260px;
+  .keychain {
+    width: 80vw;
     height: auto;
-    top: 2600px;
-    left: 0;
-    right: 0;
-    margin: auto;
   }
-  .rightcardbottom {
-    width: 260px;
+  textbundling {
+  }
+  .bundlinggroup {
+  }
+  .mainbundling {
+    width: 80vw;
     height: auto;
-    top: 3000px;
-    left: 0;
-    right: 0;
-    margin: auto;
+  }
+  .leftbundling {
+    width: 20vw;
+    height: auto;
+  }
+  .centerbundling {
+    width: 20vw;
+    height: auto;
+  }
+  .rightbundling {
+    width: 20vw;
+    height: auto;
+  }
+  .cp1 {
+    width: 30vw;
+    height: auto;
+  }
+  .cp2 {
+    width: 30vw;
+    height: auto;
+  }
+  .maincp {
+    margin-top: 30vh;
+  }
+  .footerimage {
   }
 }
 </style>

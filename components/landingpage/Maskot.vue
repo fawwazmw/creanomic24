@@ -75,11 +75,11 @@ export default {
   data() {
     return {
       kananWords:
-          `Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates distinctio tempore quas beatae et, magni eius itaque commodi necessitatibus maxime qui. Iure, doloribus?`.split(
+          `Sea angel adalah makhluk laut yang kecil dan anggun⁠ hidup di laut dalam dan misterius, menggambarkan ide kreatif dapat muncul secara tidak terduga dan  simbol kreativitas yang lembut namun kuat`.split(
               " "
           ),
       kiriWords:
-          `Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates distinctio tempore quas beatae et, magni eius itaque commodi necessitatibus maxime qui. Iure, doloribus?`.split(
+          `Nama Nomi berasal dari nama Creanomic. Nomi menjadi simbol  kolaborasi, kreativitas, inovasi & representasi ideal  acara Creanomic, yang membawa semangat baru untuk ekonomi kreatif`.split(
               " "
           ),
     };

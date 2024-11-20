@@ -103,7 +103,7 @@
     />
 
     <div
-      class="absolute bottom-[270px] flex items-center justify-center mainsponsor"
+      class="absolute bottom-[300px] flex items-center justify-center mainsponsor"
     >
       <h1
         class="text-center text-[40px] sm:text-[50px] md:text-[70px] font-bold font-poppins bg-gradient-to-r from-[#201169] to-[#7840C9] bg-clip-text text-transparent textsponsor"
@@ -112,11 +112,11 @@
       </h1>
     </div>
 
-    <img
-      src="assets/sponsortengah.svg"
-      alt="Positioned Image"
-      class="absolute justify-center bottom-[44px] object-cover max-w-[50%] md:max-w-none sponsortengah"
-    />
+<!--    <img-->
+<!--      src="assets/sponsortengah.svg"-->
+<!--      alt="Positioned Image"-->
+<!--      class="absolute justify-center bottom-[44px] object-cover max-w-[50%] md:max-w-none sponsortengah"-->
+<!--    />-->
 
     <img
       src="assets/sponsorkanantengah.svg"
@@ -124,11 +124,11 @@
       class="absolute bottom-[53px] right-[20px] md:right-[425px] object-cover max-w-[40%] md:max-w-none sponsorkanantengah"
     />
 
-    <img
-      src="assets/sponsorkanan.svg"
-      alt="Positioned Image"
-      class="absolute bottom-[53px] right-[20px] md:right-[228px] object-cover max-w-[40%] md:max-w-none sponsorkanan"
-    />
+<!--    <img-->
+<!--      src="assets/sponsorkanan.svg"-->
+<!--      alt="Positioned Image"-->
+<!--      class="absolute bottom-[53px] right-[20px] md:right-[228px] object-cover max-w-[40%] md:max-w-none sponsorkanan"-->
+<!--    />-->
 
     <img
       src="assets/sponsorkiritengah.svg"
@@ -136,11 +136,11 @@
       class="absolute bottom-[53px] left-[20px] md:left-[425px] object-cover max-w-[40%] md:max-w-none sponsorkiritengah"
     />
 
-    <img
-      src="assets/sponsorkiri.svg"
-      alt="Positioned Image"
-      class="absolute bottom-[53px] left-[20px] md:left-[228px] object-cover max-w-[40%] md:max-w-none sponsorkiri"
-    />
+<!--    <img-->
+<!--      src="assets/sponsorkiri.svg"-->
+<!--      alt="Positioned Image"-->
+<!--      class="absolute bottom-[53px] left-[20px] md:left-[228px] object-cover max-w-[40%] md:max-w-none sponsorkiri"-->
+<!--    />-->
 
     <!-- Gradient Background Section -->
     <div class="gradient-background w-full -mt-1"></div>
@@ -575,8 +575,8 @@ export default {
     bottom: 14vh;
   }
   .sponsorkanantengah {
-    width: 14vw;
-    bottom: 15vh;
+    width: 20vw;
+    bottom: 10vh;
     right: 28vw;
   }
   .sponsorkanan {
@@ -585,8 +585,8 @@ export default {
     right: 14vw;
   }
   .sponsorkiritengah {
-    width: 14vw;
-    bottom: 15vh;
+    width: 20vw;
+    bottom: 10vh;
     left: 28vw;
   }
   .sponsorkiri {
@@ -676,7 +676,7 @@ export default {
     bottom: 14vh;
   }
   .mainsponsor {
-    bottom: 10vh;
+    bottom: 12vh;
   }
   .textsponsor {
     font-size: 5vw;
@@ -686,8 +686,8 @@ export default {
     bottom: 1vh;
   }
   .sponsorkanantengah {
-    width: 14vw;
-    bottom: 1.5vh;
+    width: 18vw;
+    bottom: 0vh;
     right: 28vw;
   }
   .sponsorkanan {
@@ -696,8 +696,8 @@ export default {
     right: 14vw;
   }
   .sponsorkiritengah {
-    width: 14vw;
-    bottom: 1.5vh;
+    width: 18vw;
+    bottom: 0vh;
     left: 28vw;
   }
   .sponsorkiri {
@@ -787,7 +787,7 @@ export default {
     bottom: 14vh;
   }
   .mainsponsor {
-    bottom: 10vh;
+    bottom: 11vh;
   }
   .textsponsor {
     font-size: 5vw;
@@ -797,8 +797,8 @@ export default {
     bottom: 1vh;
   }
   .sponsorkanantengah {
-    width: 14vw;
-    bottom: 1.5vh;
+    width: 18vw;
+    bottom: 0vh;
     right: 28vw;
   }
   .sponsorkanan {
@@ -807,8 +807,8 @@ export default {
     right: 14vw;
   }
   .sponsorkiritengah {
-    width: 14vw;
-    bottom: 1.5vh;
+    width: 18vw;
+    bottom: 0vh;
     left: 28vw;
   }
   .sponsorkiri {
@@ -908,18 +908,18 @@ export default {
     bottom: 1vh;
   }
   .sponsorkanantengah {
-    width: 14vw;
-    bottom: 1.5vh;
+    width: 18vw;
+    bottom: 0vh;
     right: 28vw;
   }
   .sponsorkanan {
-    width: 14vw;
-    bottom: 1.5vh;
+    width: 18vw;
+    bottom: 0vh;
     right: 14vw;
   }
   .sponsorkiritengah {
-    width: 14vw;
-    bottom: 1.5vh;
+    width: 18vw;
+    bottom: 0vh;
     left: 28vw;
   }
   .sponsorkiri {

@@ -77,12 +77,12 @@
                   class="absolute z-10 font-normal bg-[#201169] text-white divide-y divide-gray-100 rounded-lg shadow w-44 dropdown-menu"
               >
                 <ul class="py-2 text-xl">
-                  <li>
-                    <a
-                        href="/event/jobfair"
-                        class="block px-4 py-2 hover:bg-[#351f5e] hover:text-white"
-                    >Job Fair</a>
-                  </li>
+<!--                  <li>-->
+<!--                    <a-->
+<!--                        href="/event/jobfair"-->
+<!--                        class="block px-4 py-2 hover:bg-[#351f5e] hover:text-white"-->
+<!--                    >Job Fair</a>-->
+<!--                  </li>-->
                   <li>
                     <a
                         href="/event/exhibition"

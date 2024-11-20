@@ -33,32 +33,24 @@
     </div>
 
     <!-- Row of Images Below the Text -->
-    <!-- Left Image -->
     <img
         src="assets/left_image.svg"
         alt="Left Image"
-        class="absolute w-[300px] h-[11vh] object-cover left-[10vw] top-[150vh] leftimage"
-    />
-
-    <!-- Center Image -->
-    <img
-        src="assets/center_image.svg"
-        alt="Center Image"
-        class="absolute w-[434px] h-[11vh] object-cover justify-center top-[150vh] centerimage"
+        class="absolute w-[432px] h-[98px] object-cover left-[10vw] top-[150vh] leftimage"
     />
 
     <!-- Right Image -->
     <img
         src="assets/right_image.svg"
         alt="Right Image"
-        class="absolute w-[300px] h-[11vh] object-cover right-[10vw] top-[150vh] rightimage"
+        class="absolute w-[432px] h-[98px] object-cover right-[10vw] top-[150vh] rightimage"
     />
 
     <!-- Center Perform -->
     <img
-        src="assets/poster_fest.svg"
-        alt="Poster Fest"
-        class="absolute w-[830px] h-auto object-cover justify-center bottom-0 posterfest"
+        src="assets/center_perform.svg"
+        alt="Center Perform"
+        class="absolute w-[1170px] h-auto object-cover justify-center bottom-[500px] centerperform"
     />
 
     <img
@@ -83,7 +75,7 @@ export default {
   data() {
     return {
       textWords:
-          `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur dolores aliquam quis, molestiae ullam ad reiciendis dolorem amet. Quibusdam quam molestias expedita inventore animi odio tempore accusantium reiciendis et vero, harum nam impedit repellendus odit quos laborum rerum ea ex placeat esse quis labore ipsum! Cumque dolorem, quibusdam minus delectus unde mollitia voluptatibus a quod, eius, accusamus officia voluptatem natus cum incidunt error at. A reprehenderit repellendus, illum alias nulla sint. Quae nisi distinctio asperiores pariatur ea veniam eveniet aliquam odio deserunt itaque.`.split(
+          `Creafest adalah salah satu acara unggulan dalam rangkaian Creanomic, yang dirancang sebagai puncak perayaan kreativitas, seni, dan hiburan. Creafest akan diramaikan dan dimeriahkan oleh penampilan guest star yang menarik.`.split(
               " "
           ),
     };
@@ -222,8 +214,8 @@ export default {
 
 @media (max-width: 1920px) {
   .creafest-section {
-    background-size: 100% 4700px;
-    height: 4700px;
+    background-size: 100% 4200px;
+    height: 4200px;
   }
 
   .creafesthead {
@@ -239,19 +231,18 @@ export default {
     font-size: xx-large;
   }
   .leftimage {
-    width: 20vw;
-    height: auto;
-    top: 140vh;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
+    width: 432px;
+    height: 98px;
     top: 140vh;
   }
   .rightimage {
-    width: 20vw;
-    height: auto;
+    width: 432px;
+    height: 98px;
     top: 140vh;
+  }
+  .centerperform {
+    width: 80vw;
+    height: 66vh;
   }
   .posterfest {
     width: 80vw;
@@ -299,19 +290,14 @@ export default {
     font-size: xx-large;
   }
   .leftimage {
-    width: 20vw;
-    height: auto;
-    top: 160vh;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
-    top: 160vh;
+    width: 432px;
+    height: 98px;
+    top: 165vh;
   }
   .rightimage {
-    width: 20vw;
-    height: auto;
-    top: 160vh;
+    width: 432px;
+    height: 98px;
+    top: 165vh;
   }
   .posterfest {
     width: 80vw;
@@ -392,17 +378,18 @@ export default {
   }
   .leftimage {
     left: 10vw;
-    width: 20vw;
-    height: auto;
-  }
-  .centerimage {
-    width: 30vw;
+    width: 35vw;
     height: auto;
   }
   .rightimage {
     right: 10vw;
-    width: 20vw;
+    width: 35vw;
     height: auto;
+  }
+  .centerperform {
+    width: 80vw;
+    height: auto;
+    bottom: 80vh;
   }
   .posterfest {
     width: 80vw;
@@ -468,18 +455,25 @@ export default {
     font-size: larger;
   }
   .leftimage {
-    left: 10vw;
-    width: 20vw;
+    width: 50vw;
     height: auto;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
+    top: 160vh;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .rightimage {
-    right: 10vw;
-    width: 20vw;
+    width: 50vw;
     height: auto;
+    top: 190vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .centerperform {
+    width: 90vw;
+    height: auto;
+    bottom: 40vh;
   }
   .posterfest {
     width: 80vw;
@@ -514,25 +508,25 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
-    top: 210vh;
+    top: 200vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
     top: 230vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 250vh;
     left: 0;
     right: 0;
     margin: auto;
+  }
+  .centerperform {
+    width: 85vw;
+    height: auto;
+    bottom: 60vh;
   }
   .posterfest {
     width: 80vw;
@@ -568,25 +562,25 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
     top: 220vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
-    top: 240vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 260vh;
+    top: 250vh;
     left: 0;
     right: 0;
     margin: auto;
+  }
+  .centerperform {
+    width: 85vw;
+    height: auto;
+    bottom: 60vh;
   }
   .posterfest {
     width: 80vw;
@@ -621,25 +615,25 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
-    height: auto;
-    top: 230vh;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-  .centerimage {
     width: 70vw;
     height: auto;
     top: 250vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 270vh;
     left: 0;
     right: 0;
     margin: auto;
+  }
+  .rightimage {
+    width: 70vw;
+    height: auto;
+    top: 275vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .centerperform {
+    width: 85vw;
+    height: auto;
+    bottom: 50vh;
   }
   .posterfest {
     width: 85vw;

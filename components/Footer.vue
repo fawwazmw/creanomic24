@@ -2,7 +2,7 @@
   <footer class="footer-background font-montserrat">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8 flex justify-center">
       <span class="block text-2xl text-gray-200 text-center dark:text-gray-400">
-        © 2024, Tim DDM-IT Creanomic Vokasi UB 2024
+        © 2024, Tim <a href="/developer" class="text-gray-200 underline hover:text-blue-400 transition-colors duration-300">DDM-IT</a> Creanomic Vokasi UB 2024
       </span>
     </div>
   </footer>

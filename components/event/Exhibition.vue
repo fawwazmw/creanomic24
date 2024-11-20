@@ -33,68 +33,60 @@
     </div>
 
     <!-- Row of Images Below the Text -->
-    <!-- Left Image -->
     <img
         src="assets/left_image.svg"
         alt="Left Image"
-        class="absolute w-[300px] h-[11vh] object-cover left-[10vw] top-[150vh] leftimage"
-    />
-
-    <!-- Center Image -->
-    <img
-        src="assets/center_image.svg"
-        alt="Center Image"
-        class="absolute w-[434px] h-[11vh] object-cover justify-center top-[150vh] centerimage"
+        class="absolute w-[432px] h-[98px] object-cover left-[10vw] top-[150vh] leftimage"
     />
 
     <!-- Right Image -->
     <img
         src="assets/right_image.svg"
         alt="Right Image"
-        class="absolute w-[300px] h-[11vh] object-cover right-[10vw] top-[150vh] rightimage"
+        class="absolute w-[432px] h-[98px] object-cover right-[10vw] top-[150vh] rightimage"
     />
 
-    <!-- Left Image Top -->
-    <img
-        src="assets/left_image.svg"
-        alt="Left Image"
-        class="absolute w-[370px] h-[370px] object-cover left-[10vw] bottom-[900px] rounded-2xl border-8 leftimagetop"
-    />
+<!--    &lt;!&ndash; Left Image Top &ndash;&gt;-->
+<!--    <img-->
+<!--        src="assets/left_image.svg"-->
+<!--        alt="Left Image"-->
+<!--        class="absolute w-[370px] h-[370px] object-cover left-[10vw] bottom-[900px] rounded-2xl border-8 leftimagetop"-->
+<!--    />-->
 
-    <!-- Center Image Top -->
-    <img
-        src="assets/center_image.svg"
-        alt="Center Image"
-        class="absolute w-[370px] h-[370px] object-cover justify-center bottom-[900px] rounded-2xl border-8 centerimagetop"
-    />
+<!--    &lt;!&ndash; Center Image Top &ndash;&gt;-->
+<!--    <img-->
+<!--        src="assets/center_image.svg"-->
+<!--        alt="Center Image"-->
+<!--        class="absolute w-[370px] h-[370px] object-cover justify-center bottom-[900px] rounded-2xl border-8 centerimagetop"-->
+<!--    />-->
 
-    <!-- Right Image Top -->
-    <img
-        src="assets/right_image.svg"
-        alt="Right Image"
-        class="absolute w-[370px] h-[370px] object-cover right-[10vw] bottom-[900px] rounded-2xl border-8 rightimagetop"
-    />
+<!--    &lt;!&ndash; Right Image Top &ndash;&gt;-->
+<!--    <img-->
+<!--        src="assets/right_image.svg"-->
+<!--        alt="Right Image"-->
+<!--        class="absolute w-[370px] h-[370px] object-cover right-[10vw] bottom-[900px] rounded-2xl border-8 rightimagetop"-->
+<!--    />-->
 
-    <!-- Left Image Bottom -->
-    <img
-        src="assets/left_image.svg"
-        alt="Left Image"
-        class="absolute w-[370px] h-[370px] object-cover left-[10vw] bottom-[500px] rounded-2xl border-8 leftimagebottom"
-    />
+<!--    &lt;!&ndash; Left Image Bottom &ndash;&gt;-->
+<!--    <img-->
+<!--        src="assets/left_image.svg"-->
+<!--        alt="Left Image"-->
+<!--        class="absolute w-[370px] h-[370px] object-cover left-[10vw] bottom-[500px] rounded-2xl border-8 leftimagebottom"-->
+<!--    />-->
 
-    <!-- Center Image Bottom -->
-    <img
-        src="assets/center_image.svg"
-        alt="Center Image"
-        class="absolute w-[370px] h-[370px] object-cover justify-center bottom-[500px] rounded-2xl border-8 centerimagebottom"
-    />
+<!--    &lt;!&ndash; Center Image Bottom &ndash;&gt;-->
+<!--    <img-->
+<!--        src="assets/center_image.svg"-->
+<!--        alt="Center Image"-->
+<!--        class="absolute w-[370px] h-[370px] object-cover justify-center bottom-[500px] rounded-2xl border-8 centerimagebottom"-->
+<!--    />-->
 
-    <!-- Right Image Bottom -->
-    <img
-        src="assets/right_image.svg"
-        alt="Right Image"
-        class="absolute w-[370px] h-[370px] object-cover right-[10vw] bottom-[500px] rounded-2xl border-8 rightimagebottom"
-    />
+<!--    &lt;!&ndash; Right Image Bottom &ndash;&gt;-->
+<!--    <img-->
+<!--        src="assets/right_image.svg"-->
+<!--        alt="Right Image"-->
+<!--        class="absolute w-[370px] h-[370px] object-cover right-[10vw] bottom-[500px] rounded-2xl border-8 rightimagebottom"-->
+<!--    />-->
 
     <img
         src="assets/bungatengah.svg"
@@ -118,7 +110,7 @@ export default {
   data() {
     return {
       textWords:
-          `Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur dolores aliquam quis, molestiae ullam ad reiciendis dolorem amet. Quibusdam quam molestias expedita inventore animi odio tempore accusantium reiciendis et vero, harum nam impedit repellendus odit quos laborum rerum ea ex placeat esse quis labore ipsum! Cumque dolorem, quibusdam minus delectus unde mollitia voluptatibus a quod, eius, accusamus officia voluptatem natus cum incidunt error at. A reprehenderit repellendus, illum alias nulla sint. Quae nisi distinctio asperiores pariatur ea veniam eveniet aliquam odio deserunt itaque.`.split(
+          `Exhibition di Creanomic merupakan ruang eksplorasi yang memamerkan karya-karya terbaik hasil kolaborasi dengan mahasiswa Program Studi Desain Grafis dan Program Studi Teknologi Informasi (TI). Exhibition ini bertujuan untuk menunjukkan integrasi antara seni visual dan teknologi, menciptakan pengalaman yang tidak hanya menarik secara estetika tetapi juga inovatif secara fungsional.`.split(
               " "
           ),
     };
@@ -345,18 +337,13 @@ export default {
     font-size: xx-large;
   }
   .leftimage {
-    width: 20vw;
-    height: auto;
-    top: 140vh;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
+    width: 432px;
+    height: 98px;
     top: 140vh;
   }
   .rightimage {
-    width: 20vw;
-    height: auto;
+    width: 432px;
+    height: 98px;
     top: 140vh;
   }
   .leftimagetop {
@@ -400,19 +387,14 @@ export default {
     font-size: xx-large;
   }
   .leftimage {
-    width: 20vw;
-    height: auto;
-    top: 160vh;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
-    top: 160vh;
+    width: 432px;
+    height: 98px;
+    top: 165vh;
   }
   .rightimage {
-    width: 20vw;
-    height: auto;
-    top: 160vh;
+    width: 432px;
+    height: 98px;
+    top: 165vh;
   }
   .leftimagetop {
 
@@ -485,16 +467,12 @@ export default {
   }
   .leftimage {
     left: 10vw;
-    width: 20vw;
-    height: auto;
-  }
-  .centerimage {
-    width: 30vw;
+    width: 35vw;
     height: auto;
   }
   .rightimage {
     right: 10vw;
-    width: 20vw;
+    width: 35vw;
     height: auto;
   }
   .bungatengah {
@@ -556,18 +534,20 @@ export default {
     font-size: larger;
   }
   .leftimage {
-    left: 10vw;
-    width: 20vw;
+    width: 50vw;
     height: auto;
-  }
-  .centerimage {
-    width: 30vw;
-    height: auto;
+    top: 160vh;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .rightimage {
-    right: 10vw;
-    width: 20vw;
+    width: 50vw;
     height: auto;
+    top: 190vh;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .leftimagetop {
     width: 180px;
@@ -627,22 +607,17 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
-    top: 210vh;
+    top: 200vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
     top: 230vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 250vh;
     left: 0;
     right: 0;
     margin: auto;
@@ -718,22 +693,17 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
     top: 220vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
-    top: 240vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 260vh;
+    top: 250vh;
     left: 0;
     right: 0;
     margin: auto;
@@ -808,22 +778,17 @@ export default {
     font-size: large;
   }
   .leftimage {
-    width: 50vw;
+    width: 70vw;
     height: auto;
-    top: 230vh;
+    top: 250vh;
     left: 0;
     right: 0;
     margin: auto;
   }
-  .centerimage {
+  .rightimage {
     width: 70vw;
     height: auto;
-    top: 250vh;
-  }
-  .rightimage {
-    width: 50vw;
-    height: auto;
-    top: 270vh;
+    top: 275vh;
     left: 0;
     right: 0;
     margin: auto;
