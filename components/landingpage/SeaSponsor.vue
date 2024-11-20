@@ -11,12 +11,12 @@
       />
     </div>
 
-    <!-- Positioned Images -->
-    <img
-      src="assets/jobfair.svg"
-      alt="Positioned Image"
-      class="absolute top-[427px] right-[20px] md:right-[136px] object-cover max-w-[40%] md:max-w-none jobfair"
-    />
+<!--    &lt;!&ndash; Positioned Images &ndash;&gt;-->
+<!--    <img-->
+<!--      src="assets/jobfair.svg"-->
+<!--      alt="Positioned Image"-->
+<!--      class="absolute top-[427px] right-[20px] md:right-[136px] object-cover max-w-[40%] md:max-w-none jobfair"-->
+<!--    />-->
 
     <img
       src="assets/ikan1.svg"

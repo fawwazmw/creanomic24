@@ -55,7 +55,7 @@ export default {
   name: "CompetitionLanding",
   data() {
     return {
-      textWords: `Job Fair merupakan sebuah kegiatan yang dirancang untuk memfasilitasi pertemuan antara mahasiswa fakultas vokasi dan berbagai perusahaan terkemuka. Acara ini bertujuan memberikan ruang bagi para pencari kerja untuk mengeksplorasi peluang karir, memahami kebutuhan dunia kerja, dan berinteraksi langsung dengan para perekrut dari berbagai industri. Dalam kegiatan ini, peserta memiliki kesempatan untuk mengikuti sesi career counseling dan networking.`.split(
+      textWords: `Competition merupakan acara inti Creanomic yang mana merupakan platform kompetisi yang dirancang untuk menggali potensi, menumbuhkan inovasi, serta mengasah keterampilan peserta dalam berbagai bidang. Dengan berbagai cabang lomba yang relevan dan menarik, kompetisi ini tidak hanya bertujuan untuk memacu semangat kompetisi positif, tetapi juga menjadi ruang bagi generasi muda untuk menunjukkan ide-ide terbaik mereka.`.split(
           " "
       ),
     };
