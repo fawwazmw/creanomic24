@@ -62,7 +62,7 @@
     />
 
     <!-- Guidebook with Hover Effect -->
-    <a href="#guidebook-link" class="hoverable-icon absolute w-[170px] h-auto top-[260vh] left-[20vw] z-10 guidebook">
+    <a href="https://drive.google.com/drive/folders/1_EGRsje2xqhDVm3tYc3xswdeh_fUY8EV" class="hoverable-icon absolute w-[170px] h-auto top-[260vh] left-[20vw] z-10 guidebook">
       <img
           src="assets/guidebook.svg"
           alt="Guidebook"
@@ -71,7 +71,7 @@
     </a>
 
     <!-- CP with Hover Effect -->
-    <a href="#cp-link" class="hoverable-icon absolute w-[170px] h-auto top-[260vh] left-[40vw] z-10 cp_image">
+    <a href="https://wa.me/6282372278912?text=Hello%20Saya%20tertarik%20dengan%20mengikuti%20Lomba%20Comic Quest ini!" class="hoverable-icon absolute w-[170px] h-auto top-[260vh] left-[40vw] z-10 cp_image">
       <img
           src="assets/cp.svg"
           alt="CP"

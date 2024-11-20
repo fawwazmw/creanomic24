@@ -62,7 +62,7 @@
     />
 
     <!-- Guidebook with Hover Effect -->
-    <a href="#guidebook-link" class="hoverable-icon absolute w-[170px] h-auto top-[260vh] left-[20vw] z-10 guidebook">
+    <a href="https://drive.google.com/drive/folders/1jnqF-5odsajhOFPqjZar0Y98-FTXRpvJ" class="hoverable-icon absolute w-[170px] h-auto top-[260vh] left-[20vw] z-10 guidebook">
       <img
           src="assets/guidebook.svg"
           alt="Guidebook"
@@ -71,7 +71,7 @@
     </a>
 
     <!-- CP with Hover Effect -->
-    <a href="#cp-link" class="hoverable-icon absolute w-[170px] h-auto top-[260vh] left-[40vw] z-10 cp_image">
+    <a href="https://wa.me/6285608570702?text=Hello%20Saya%20tertarik%20dengan%20mengikuti%20Lomba%20Bussiness Plan ini!" class="hoverable-icon absolute w-[170px] h-auto top-[260vh] left-[40vw] z-10 cp_image">
       <img
           src="assets/cp.svg"
           alt="CP"
